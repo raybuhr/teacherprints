@@ -16,10 +16,8 @@ $ git clone git@github.com:TSSlade/teacherprints.git
 $ mkdir teacherprints/.secrets
 $ echo ".secrets/*" >> .gitignore
 $ touch teacherprints/.secrets/aws_credentials.csv; cd teacherprints/.secrets
-$ echo "AWSAccessKeyId=YourKeyIDHereNoQuotes" >> aws_credentials.csv
-$ echo "AWSSecretKey=YourSecretKeyHere" >> aws_credentials.csv
-$ echo "nonAdmin-AccessKeyId=YourKeyIDHereNoQuotes" >> aws_credentials.csv
-$ echo "nonAdmin-SecretKey=YourSecretKeyHere" >> aws_credentials.csv
+$ echo "nonAdmin-AccessKeyId=YourOtherKeyIDHereNoQuotes" >> aws_credentials.csv
+$ echo "nonAdmin-SecretKey=YourOtherSecretKeyHereNoQuotes" >> aws_credentials.csv
 $ touch .secrets/teacherprints-ec2.pem
 $ vim .secrets/teacherprints-ec2.pem
 ```
