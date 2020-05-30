@@ -25,11 +25,10 @@ $ vim .secrets/teacherprints-ec2.pem
 ```
 
 Copy and paste the contents of the PEM file into `teacherprints-ec2.pem`.
-
-    + Via text insert mode:
-        + `i`
-        + `command+v` on a Mac or `control+v` on Windows to paste your buffer into vim
-    + Via normal mode:
-        + `command+shift+v` on a Mac or `TBD` on Windows to paste your buffer into vim
-    + Write the file to disc: `:w!`
-    + Quit vim: `:q` (`:q!` to quit without saving)
++ Via text insert mode:
+    + `i`
+    + `command+v` on a Mac or `control+v` on Windows to paste your buffer into vim
++ Via normal mode:
+    + `command+shift+v` on a Mac or `TBD` on Windows to paste your buffer into vim
++ Write the file to disc: `:w!`
++ Quit vim: `:q` (`:q!` to quit without saving)
