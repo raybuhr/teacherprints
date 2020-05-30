@@ -7,7 +7,14 @@
 
 ## Code
 
-+ Information on the [Google AudioSet](http://research.google.com/audioset/download.html) dataset, including links to the labels alone ([balanced training set](http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/balanced_train_segments.csv), [unbalanced training set](http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/unbalanced_train_segments.csv), [evaluation set](http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/eval_segments.csv)) or to the features dataset.
++ Information on the [Google AudioSet](http://research.google.com/audioset/download.html) dataset, including links to
+    + the labels alone
+        + [balanced training set](http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/balanced_train_segments.csv),
+        + [unbalanced training set](http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/unbalanced_train_segments.csv),
+        + [evaluation set](http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/eval_segments.csv), or to
+    + the [features dataset](storage.googleapis.com/us_audioset/youtube_corpus/v1/features/features.tar.gz).
 + Link to VGGish in Google's [pre-trained tensorflow models](https://github.com/tensorflow/models/tree/master/research/audioset/vggish) repo
 + [VGGish demo notebook in Colab](https://colab.research.google.com/drive/1TbX92UL9sYWbdwdGE0rJ9owmezB-Rl1C?usp=sharing)
     * I can't quite get it to work - it's not passing the smoke test, largely because it can't seem to FIND the smoke test module - but it's an interesting overview of how working with the VGGish pretrained model actually proceeds.
+
+##
