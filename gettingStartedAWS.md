@@ -242,7 +242,6 @@ It would be a bit of a pain to always need to back up out your user's `HOME` dir
 # It does! Success.
 ```
 
-
 ## Other notes
 
 In the event you use SSH for communication with GitHub and you're not able to make commits to the repo or clone it, the instructions at [_How to use SSH keys for authentication_](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/) can help sort you out.
