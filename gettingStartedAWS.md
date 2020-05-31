@@ -134,7 +134,7 @@ Our references for this section are posts from
 1. All the configurations that go together are grouped in what is called a _stanza_. It is good practice to indent all lines of the stanza save the first to make it clearer how everything fits together.
 1. The file is read/interpreted from top to bottom. The first stanza matching the command you are issuing is the one that will take precedence.
 1. The relevant portion of mine looks like this:
-    ```bash
+    ```ssh-config
     # The name of the host you'll invoke with $ ssh <whatever>
     Host teacherprints
         # The Elastic IP that AWS will keep pointing at our EC2 instance
