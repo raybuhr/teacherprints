@@ -43,3 +43,8 @@ seq  -f "-" -s '' 20; echo '\n'
 echo 'The simplified mapping of IDs to human-readable labels:'
 cat reference/audioset-human-readable-id-mapping.csv | head -5
 seq  -f "+" -s '' 20; echo '\n'
+
+
+# Reference URLs for portions of the code above
+# https://stackoverflow.com/questions/25558456/how-can-i-convert-my-json-to-csv-using-jq
+# https://unix.stackexchange.com/questions/163845/using-jq-to-extract-values-and-format-in-csv
