@@ -31,7 +31,15 @@ echo 'A sample:'
 head -5 ../data/audioset/rerated_video_ids.txt
 seq  -f "+" -s '' 20; echo '\n'
 
-
 # Go get the ontology so we can map the codes to human-readable labels
 curl https://raw.githubusercontent.com/audioset/ontology/master/ontology.json > ../data/audioset/audioset-ontology.json
 cat  ../data/audioset/audioset-ontology.json | jq -r '.[] | [.id, .name] | @csv' > reference/audioset-human-readable-id-mapping.csv
+
+# Inpect a portion of the ontology
+seq  -f "+" -s '' 20; echo '\n'
+echo 'The raw ontology:'
+jq '[.[0], .[1]]' ../data/audioset/audioset-ontology.json
+seq  -f "-" -s '' 20; echo '\n'
+echo 'The simplified mapping of IDs to human-readable labels:'
+cat reference/audioset-human-readable-id-mapping.csv | head -5
+seq  -f "+" -s '' 20; echo '\n'
