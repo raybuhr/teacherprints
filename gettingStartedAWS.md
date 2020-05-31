@@ -39,7 +39,7 @@ These instructions assume you have not already gotten your .pem file set up on y
 
 A little bit about vim for reference [here](https://irian.to/blogs/introduction-to-vim-modes/).
 
-You'll need to make sure that your .pem file isn't publicly viewable for SSH to work. So next execute
+For SSH to use your .pem file we'll need to make sure that it not only isn't _publicly_ viewable, even your own user can only read it (but not write or execute). So next execute the command
 
 ```bash
 $ chmod 400 .secrets/teacherprints-ec2.pem
@@ -57,7 +57,7 @@ If you have followed the instructions above about structuring your `.secrets` fo
 
 ```bash
 # From within the teacherprints root folder
-$ ssh -i ".secrets/teacherprints-ec2.pem" YourUserNameHere@ec2-18-222-196-16.us-east-2.compute.amazonaws.com
+$ ssh -i ".secrets/teacherprints-ec2.pem" YourUserNameHere@ec2-3-23-90-91.us-east-2.compute.amazonaws.com`
 ```
 
 ### To create a new user within the cloud instance
@@ -111,7 +111,7 @@ Our references for this section are posts from
     1. If it's not there, create it first (`$ mkdir ~/.ssh`).
     ```bash
     $ touch ~/.ssh/config
-    # update permissions so only the user can read/write
+    # update permissions so only the user can read, can write, can't execute
     $ chmod 600 ~/.ssh/config
     ```
 1. Your config file will be laid out with keys (e.g., `Host`) separated from the values they take (e.g., `dev`) by a space: `Host dev`.
@@ -193,21 +193,26 @@ It would be a bit of a pain to always need to back up out your user's `HOME` dir
 ```bash
 ~$ pwd
 # /home/tslade
+
 # Make a symbolic link to the common folder and name it something helpful
 ~$ ln -s /home/projects tslade-projects
 ~$ ls -l
 # total 4
 # drwxr-xr-x 3 tslade tslade 4096 May 31 04:12 snap
 # lrwxrwxrwx 1 tslade tslade   14 May 31 04:45 tslade-projects -> /home/projects
+
 ~$ cd tslade-projects
+
 # Let's verify it contains what we expect it to
 ~/tslade-projects$ ls -l
 # total 4
 # drwxrwxr-x 5 tslade tslade 4096 May 31 04:31 teacherprints
+
 # If all worked as planned, the output of the next command should match the above
 ~/tslade-projects$  ls -l /home/projects
 # total 4
 # drwxrwxr-x 5 tslade tslade 4096 May 31 04:31 teacherprints
+
 # It does! Success.
 ```
 
