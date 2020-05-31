@@ -14,12 +14,19 @@ Those are not hard-and-fast requirements, but once your setup deviates from this
 
 ```bash
 $ git clone git@github.com:TSSlade/teacherprints.git
+
 $ mkdir teacherprints/.secrets
+
 $ echo ".secrets/*" >> .gitignore
+
 $ touch teacherprints/.secrets/aws_credentials.csv; cd teacherprints/.secrets
+
 $ echo "nonAdmin-AccessKeyId=YourOtherKeyIDHereNoQuotes" >> aws_credentials.csv
+
 $ echo "nonAdmin-SecretKey=YourOtherSecretKeyHereNoQuotes" >> aws_credentials.csv
+
 $ touch .secrets/teacherprints-ec2.pem
+
 $ vim .secrets/teacherprints-ec2.pem
 ```
 
@@ -71,15 +78,22 @@ By default, the `YourUserNameHere` value for an EC2 Ubuntu instance is `ubuntu`.
 # Create a new user; if no password desired append `--disabled-password`
 # Not recommended to disable password for future sudo-enabled users
 $ sudo adduser NewUserName
+
 # Add the user to the sudo usergroup
 $ sudo usermod -aG NewUserName
+
 # Change to the NewUserName
 $ sudo su - NewUserName
+
 # Create a space for the authorized keys to live and add the public key
 $ mkdir .ssh
+
 $ chmod 700 .ssh
+
 $ touch .ssh/authorized_keys
+
 $ chmod 600 .ssh/authorized_keys
+
 $ cat >> .ssh/authorized_keys
 # `cat` is now ready to accept input from your buffer.
 # Copy the public key into your buffer and `command+v` or `ctrl+v` to paste
@@ -111,6 +125,7 @@ Our references for this section are posts from
     1. If it's not there, create it first (`$ mkdir ~/.ssh`).
     ```bash
     $ touch ~/.ssh/config
+
     # update permissions so only the user can read, can write, can't execute
     $ chmod 600 ~/.ssh/config
     ```
@@ -150,10 +165,9 @@ $ ssh teacherprints
 ```
 ...and I'm off to the races!
 
-
 While defining my own `.ssh/config` file, I found these resources helpful:
-    + [_Can tmux pane remote ssh-connection_](https://stackoverflow.com/questions/10537206/can-tmux-pane-remote-ssh-connection)
-    + [_Run tmux on ssh login_](https://unix.stackexchange.com/questions/552614/run-tmux-on-ssh-login)
++ [_Can tmux pane remote ssh-connection_](https://stackoverflow.com/questions/10537206/can-tmux-pane-remote-ssh-connection)
++ [_Run tmux on ssh login_](https://unix.stackexchange.com/questions/552614/run-tmux-on-ssh-login)
 
 ## Working with shared folders from within our own HOME directories
 
@@ -185,6 +199,7 @@ $ tree -L 1
     ├── usr
     ├── var
     └── writable
+
 $ tree -L 1 home
     home
     ├── ajacobson
@@ -193,6 +208,7 @@ $ tree -L 1 home
     ├── projects # <-- This is where the GitHub repo and shared files will live
     ├── tslade
     └── ubuntu
+
 $ tree -L 1 home/projects
     home/projects
     └── teacherprints
