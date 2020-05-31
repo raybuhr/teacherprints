@@ -140,6 +140,16 @@ Our references for this section are posts from
         # Local portion of a config setting to allow GUIs to run off the remote server
         ForwardX11 yes
     ```
+As a result of the above, now instead of typing in
+```bash
+$ ssh -i ".secrets/teacherprints-ec2.pem" tslade@ec2-3-23-90-91.us-east-2.compute.amazonaws.com`
+```
+I can simply invoke
+```bash
+$ ssh teacherprints
+```
+...and I'm off to the races!
+
 
 While defining my own `.ssh/config` file, I found these resources helpful:
     + [_Can tmux pane remote ssh-connection_](https://stackoverflow.com/questions/10537206/can-tmux-pane-remote-ssh-connection)
