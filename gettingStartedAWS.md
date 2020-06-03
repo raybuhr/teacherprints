@@ -158,7 +158,7 @@ Our references for this section are posts from
     ```
 As a result of the above, now instead of typing in
 ```bash
-$ ssh -i ".secrets/teacherprints-ec2.pem" tslade@ec2-3-23-90-91.us-east-2.compute.amazonaws.com`
+$ ssh -i ".secrets/teacherprints-ec2.pem" tslade@ec2-3-23-90-91.us-east-2.compute.amazonaws.com
 ```
 I can simply invoke
 ```bash
