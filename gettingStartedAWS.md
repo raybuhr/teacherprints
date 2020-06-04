@@ -1,6 +1,6 @@
 # Getting your machine set up to work with our files in AWS
 
-## Getting your GitHub repo set up locally with your credentials {: #credentials-in-secrets }
+## [Getting your GitHub repo set up locally with your credentials](#credentials-in-secrets)
 
 1. You'll want to clone the GitHub repo to your local machine. For our code to work equally well on everyone's machines, you'll want to have the same kind of folder structure in place. That includes
     + having credentials stored in a `.secrets` folder...
@@ -26,7 +26,7 @@ $ touch .secrets/teacherprints-ec2.pem
 $ vim .secrets/teacherprints-ec2.pem
 ```
 
-### Create your PEM file {: #create-pem-file}
+### [Create your PEM file](#create-pem-file)
 
 These instructions assume you have not already gotten your .pem file set up on your own. If you've already gotten it squared away and appropriately saved in the `.secrets` folder, you can skip this section.
 
@@ -50,7 +50,7 @@ For SSH to use your .pem file we'll need to make sure that it not only isn't _pu
 $ chmod 400 .secrets/teacherprints-ec2.pem
 ```
 
-## Accessing the AWS workspace from your machine {: #ssh-to-aws}
+## [Accessing the AWS workspace from your machine](#ssh-to-aws)
 
 For the moment, we'll have a shared AWS EC2 instance that we SSH into for the purposes of working on a more powerful machine than our own laptops.
 
@@ -65,7 +65,7 @@ If you have followed the instructions above about structuring your `.secrets` fo
 $ ssh -i ".secrets/teacherprints-ec2.pem" YourUserNameHere@ec2-3-23-90-91.us-east-2.compute.amazonaws.com`
 ```
 
-### To create a new user within the cloud instance
+### [To create a new user within the cloud instance](#new-cloud-user)
 
 By default, the `YourUserNameHere` value for an EC2 Ubuntu instance is `ubuntu`. It's best practice to have individual usernames for different users, though, so that's what we'll do. If the instructions below (cribbed from the [AWS documentation here](https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/)) are confusing, please reach out.
 
@@ -108,7 +108,7 @@ $ passwd
 # Enter your new password twice
 ```
 
-## Setting up your SSH config to make it easier to connect to the remote machine
+## [Setting up your SSH config to make it easier to connect to the remote machine](#ssh-config-file)
 
 If you intend to be SSHing into multiple remote machines, it may make sense to set up a `config` file within your `~/.ssh` folder that allows you to initiate an SSH session with a full suite of configurations without needing to type them in yourself.
 
@@ -169,7 +169,7 @@ While defining my own `.ssh/config` file, I found these resources helpful:
 + [_Can tmux pane remote ssh-connection_](https://stackoverflow.com/questions/10537206/can-tmux-pane-remote-ssh-connection)
 + [_Run tmux on ssh login_](https://unix.stackexchange.com/questions/552614/run-tmux-on-ssh-login)
 
-## Working with shared folders from within our own HOME directories
+## [Working with shared folders from within our own HOME directories](#shared-folders-home)
 
 The EC2 instance has a structure as follows:
 
@@ -242,11 +242,11 @@ It would be a bit of a pain to always need to back up out your user's `HOME` dir
 # It does! Success.
 ```
 
-## Other notes
+## [Other notes](#other-notes)
 
 In the event you use SSH for communication with GitHub and you're not able to make commits to the repo or clone it, the instructions at [_How to use SSH keys for authentication_](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/) can help sort you out.
 
-## Standing up a new instance via CLI
+## [Standing up a new instance via CLI](#new-instance-cli)
 
 If we need to tear down an instance and start it back up again, we don't want to have to reconfigure everything by hand in the console. That's for a couple of reasons.
 
@@ -256,7 +256,7 @@ If we need to tear down an instance and start it back up again, we don't want to
 
 So we'll go ahead and try to get our AWS config squared away using the _AWS CLI_ tool. That way we can keep our config files under version control and just execute them when we need to stand up a new server instance.
 
-### Gather your tools
+### [Gather your tools](#gather-cli-tools)
 
 1. You'll need to download and install the [AWS CLI tool (v2)](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). There are different versions for Windows, Mac, Linux, and Docker.
 2. If you have not (or your admin has not) already configured your [IAM](https://console.aws.amazon.com/iam/) (_identity access management_) user profile for the group in question, you'll need to do that.
