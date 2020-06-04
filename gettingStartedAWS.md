@@ -1,11 +1,6 @@
 # Getting your machine set up to work with our files in AWS
 
-I think this top section will still be relevant, but for the moment it's not critical. Feel free to skip it for now and move on to the next section.
-1. Download and install the [AWS CLI tool (v2)](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). There are different versions for Windows, Mac, Linux, and Docker.
-    1. You may need to configure your [IAM](https://console.aws.amazon.com/iam/) (_identity access management_) for AWS if you haven't already done so...
-    2. Once you have a rootkey or keyfile of some kind, _if the folder you're keeping it in is within this Git repo_, please remember to add that folder to your `.gitignore`.
-
-## Getting your GitHub repo set up locally with your credentials
+## Getting your GitHub repo set up locally with your credentials {: #credentials-in-secrets }
 
 1. You'll want to clone the GitHub repo to your local machine. For our code to work equally well on everyone's machines, you'll want to have the same kind of folder structure in place. That includes
     + having credentials stored in a `.secrets` folder...
@@ -31,9 +26,11 @@ $ touch .secrets/teacherprints-ec2.pem
 $ vim .secrets/teacherprints-ec2.pem
 ```
 
-### Create your PEM file
+### Create your PEM file {: #create-pem-file}
 
 These instructions assume you have not already gotten your .pem file set up on your own. If you've already gotten it squared away and appropriately saved in the `.secrets` folder, you can skip this section.
+
+**NB:** This is to be done on the physical computer you are working with. You do not need to do this in the cloud unless you're planning to SSH from one cloud machine to another cloud machine.
 
 1. Outside of vim, copy the contents of the PEM file (that I shared in Slack) into your buffer.
 1. Back in vim, paste the contents of your buffer into the file.
@@ -53,14 +50,14 @@ For SSH to use your .pem file we'll need to make sure that it not only isn't _pu
 $ chmod 400 .secrets/teacherprints-ec2.pem
 ```
 
-## Accessing the AWS workspace from your machine
+## Accessing the AWS workspace from your machine {: #ssh-to-aws}
 
 For the moment, we'll have a shared AWS EC2 instance that we SSH into for the purposes of working on a more powerful machine than our own laptops.
 
 If you have followed the instructions above about structuring your `.secrets` folder to contain the necessary credentials, the code below _should_ work as-is with only the indicated modifications. If it doesn't, please let me know.
 
 1. Verify the EC2 instance you're targeting is, indeed, up and running. You can do this via the `Instance Console` in AWS.
-    1. You'll need to have signed in to the [AWS Console](https://aws.amazon.com/). Remember:
+    1. You'll need to have signed in to the [AWS Console](https://aws.amazon.com/). Remember: you're signing in using your _IAM_ credentials for our shared workspace, _not_ your 'root' credentials (i.e., the ones you use to do AWS things unrelated to this project.)
 1. If you run into some trouble, AWS documentation on connecting your instance via the command line [is here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
 
 ```bash
@@ -70,7 +67,7 @@ $ ssh -i ".secrets/teacherprints-ec2.pem" YourUserNameHere@ec2-3-23-90-91.us-eas
 
 ### To create a new user within the cloud instance
 
-By default, the `YourUserNameHere` value for an EC2 Ubuntu instance is `ubuntu`. It's best practice to have individual usernames for different users, though, so that's what we'll do. If the instructions below (cribbed from the [AWS documentation here](https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/)) is confusing, please reach out.
+By default, the `YourUserNameHere` value for an EC2 Ubuntu instance is `ubuntu`. It's best practice to have individual usernames for different users, though, so that's what we'll do. If the instructions below (cribbed from the [AWS documentation here](https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/)) are confusing, please reach out.
 
 **N.B.**: Usernames have already been created for the `teacherprints` core team members. The below is only necessary if you want to create another one.
 
@@ -114,6 +111,8 @@ $ passwd
 ## Setting up your SSH config to make it easier to connect to the remote machine
 
 If you intend to be SSHing into multiple remote machines, it may make sense to set up a `config` file within your `~/.ssh` folder that allows you to initiate an SSH session with a full suite of configurations without needing to type them in yourself.
+
+**NB:** These are steps to be executed on the physical device you are interacting with. You do not need to do this on the cloud machine unless you are planning to SSH from there into other machines.
 
 Our references for this section are posts from
 + Linuxize ([_Using the SSH Config File_](https://linuxize.com/post/using-the-ssh-config-file/))
@@ -222,21 +221,21 @@ It would be a bit of a pain to always need to back up out your user's `HOME` dir
 # /home/tslade
 
 # Make a symbolic link to the common folder and name it something helpful
-~$ ln -s /home/projects tslade-projects
+~$ ln -s /home/projects projects
 ~$ ls -l
 # total 4
 # drwxr-xr-x 3 tslade tslade 4096 May 31 04:12 snap
-# lrwxrwxrwx 1 tslade tslade   14 May 31 04:45 tslade-projects -> /home/projects
+# lrwxrwxrwx 1 tslade tslade   14 May 31 04:45 projects -> /home/projects
 
-~$ cd tslade-projects
+~$ cd projects
 
 # Let's verify it contains what we expect it to
-~/tslade-projects$ ls -l
+~/projects$ ls -l
 # total 4
 # drwxrwxr-x 5 tslade tslade 4096 May 31 04:31 teacherprints
 
 # If all worked as planned, the output of the next command should match the above
-~/tslade-projects$  ls -l /home/projects
+~/projects$ ls -l /home/projects
 # total 4
 # drwxrwxr-x 5 tslade tslade 4096 May 31 04:31 teacherprints
 
@@ -246,3 +245,19 @@ It would be a bit of a pain to always need to back up out your user's `HOME` dir
 ## Other notes
 
 In the event you use SSH for communication with GitHub and you're not able to make commits to the repo or clone it, the instructions at [_How to use SSH keys for authentication_](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/) can help sort you out.
+
+## Standing up a new instance via CLI
+
+If we need to tear down an instance and start it back up again, we don't want to have to reconfigure everything by hand in the console. That's for a couple of reasons.
+
+1. It's not super straightforward to do in the first place, so odds are good you'll have to re-teach yourself how to do it each time. (Unless it's part of your day to day, in which case...you do you.)
+2. It takes time and concerted attention, both of which you might prefer to be spending on something else.
+3. It's not reproducible. (You might have done something _sliiiiiightly_ differently somewhere along the way, and if you didn't document that...you won't be able to get back to the configuration you needed for everything to work just right.)
+
+So we'll go ahead and try to get our AWS config squared away using the _AWS CLI_ tool. That way we can keep our config files under version control and just execute them when we need to stand up a new server instance.
+
+### Gather your tools
+
+1. You'll need to download and install the [AWS CLI tool (v2)](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). There are different versions for Windows, Mac, Linux, and Docker.
+2. If you have not (or your admin has not) already configured your [IAM](https://console.aws.amazon.com/iam/) (_identity access management_) user profile for the group in question, you'll need to do that.
+3. Follow [the instructions above](#credentials-in-secrets) about making sure your credentials aren't exposed in version control.
