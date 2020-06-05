@@ -261,3 +261,39 @@ So we'll go ahead and try to get our AWS config squared away using the _AWS CLI_
 1. You'll need to download and install the [AWS CLI tool (v2)](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). There are different versions for Windows, Mac, Linux, and Docker.
 2. If you have not (or your admin has not) already configured your [IAM](https://console.aws.amazon.com/iam/) (_identity access management_) user profile for the group in question, you'll need to do that.
 3. Follow [the instructions above](#credentials-in-secrets) about making sure your credentials aren't exposed in version control.
+
+We're going to be following [AWS' instructions](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for configuring the command line. Here's where you'll use the _access key id_ and _secret access key_ you saved in your `.secrets/aws_credentials.csv` [earlier](#credentials-in-secrets).
+
+```bash
+$ aws configure
+AWS Access Key ID [None]: PasteYourAccessKeyIdHere
+AWS Secret Access Key [None]: PasteYourSecretHere
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
+
+When you execute the commands above, you'll be making changes to the files stored at
+```bash
+### credentials
+~/.aws/credentials                 # linux
+C:\Users\USERNAME\.aws\credentials # windows
+### configuration
+~/.aws/config                      # linux
+C:\Users\USERNAME\.aws\config      # windows
+```
+Per the instructions:
+> CLI credentials file – This is one of the files that is updated when you run the command aws configure. The file is located at ~/.aws/credentials on Linux or macOS, or at C:\Users\USERNAME\.aws\credentials on Windows. This file can contain the credential details for the default profile and any named profiles.
+
+> CLI configuration file – This is another file that is updated when you run the command aws configure. The file is located at ~/.aws/config on Linux or macOS, or at C:\Users\USERNAME\.aws\config on Windows. This file contains the configuration settings for the default profile and any named profiles.
+
+At some later point we may need to enable multifactor authentication (MFA) to ensure the security settings are appropriately tight. The AWS instructions [discuss configuring MFA for CLI work](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html).
+
+Generally speaking, we're going to want to read in our configurations from a file rather than passing them to the CLI in realtime. For those purposes the `$ aws [service-name] [command-name] --generate-cli-skeleton yaml-input` command will be useful. (It is also possible to use the [json-input option](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-skeleton.html), but I think yaml will be more readable.) The discussion of the `DryRun` configuration flag is especially relevant for us.
+
+A few important troubleshooting points:
+
++ Never forget that the region you're in matters. If you're getting unexpected errors on a simple command that _should_ be working, verify that the region your profile is using matches the profile in which the resource you're consulting or acting upon is residing. e.g., [_Create security group at CLI, getting `InvalidVpcID.NotFound The vpc ID does not exist`_](https://stackoverflow.com/questions/58359924/create-security-group-at-cli-getting-invalidvpcid-notfound-the-vpc-id-does-not)
+
+```bash
+$ aws ec2 describe-security-groups --group-ids [id here] --region [region here] > vpc-security-group.yml
+```
