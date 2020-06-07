@@ -1,0 +1,31 @@
+name: modeling
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python>=3.8
+  - pescador
+  - pillow>=6.2.1
+  - pytorch>=1.5
+  - pyyaml>=5.3
+  - scikit-learn>=0.20
+  - sortedcontainers>=2.0.4
+  - sortedcollections>=1.0.1
+  - torchvision>=0.6
+  - pip>=20.1
+  - pip:
+    - cachetools>=2.0.0
+    - librosa>=0.7.0
+    - pandas>=0.18.0
+    - pyannote.core>=3.7.1
+    - pyannote-database>=3.0
+    - pyannote.metrics>=2.3
+    - pyannote.pipeline>=1.5
+    - pyannote-audio
+    - soundfile>=0.10.2
+    - tensorboard>=2.0.0
+    - tqdm>=4.29.1
+    - typing_extensions>=3.7.4
+    - torch>=1.4.0
+    - numba==0.48.0
