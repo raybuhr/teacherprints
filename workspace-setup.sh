@@ -25,9 +25,12 @@
 #### scp -i .secrets/teacherprints-ec2.pem .secrets/teacherprints-ec2.pem ubuntu@ec2-18-217-25-162.us-east-2.compute.amazonaws.com:ts_github_key
 
 # Activate the ssh-agent application and add the key for GitHub
+echo ">> [$USER]'s permissions for [.ssh]: "
+stat -c %a /home/ubuntu/.ssh
 eval `ssh-agent -s`
 ssh-add ~/.ssh/ts_github_key
-
+echo ">> [$USER]'s permissions for [.ssh/ts_github_key]: "
+stat -c %a /home/ubuntu/.ssh/ts_github_key
 # Create a group for the Team TeacherPrint users
 sudo groupadd group_tt
 
@@ -42,16 +45,25 @@ sudo usermod -aG group_tt ubuntu
 # '-G'      : assign the user to additional secondary groups (no spaces in options!)
 # '-c'      : skip the rest of the user contact info. stuff (a.k.a. 'gecos')
 
-sudo useradd -m -U -k -s '/bin/bash' -G sudo,group_tt -c "Tim Slade" tslade
+sudo useradd -m -U -s '/bin/bash' -G sudo,group_tt -c "Tim Slade" tslade
 
 # Verify that the user-creation worked as expected
 cut -d : -f 1 /etc/passwd | sort
 
 sudo mkdir -p /home/tslade/.ssh
+echo ">> [tslade]'s permissions for [/home/tslade] *before* 'chown': "
+stat -c %a /home/tslade
 sudo chown -R tslade /home/tslade
+echo ">> [tslade]'s permissions for [/home/tslade] *after* 'chown': "
+stat -c %a /home/tslade
 sudo cp ~/.ssh/authorized_keys /home/tslade/.ssh/authorized_keys
+echo ">> [tslade]'s permissions for [/home/tslade/.ssh]: \n" ls -lah /home/tslade/.ssh
 sudo chmod 700 /home/tslade/.ssh
-sudo chmod 644 /home/tslade/.ssh/authorized_keys
+echo ">> [tslade]'s permissions for [/home/tslade/.ssh] *after* 'chmod': "
+stat -c %a /home/tslade/.ssh
+sudo chmod 600 /home/tslade/.ssh/authorized_keys
+echo ">> [tslade]'s permissions for [/home/tslade/.ssh/authorized_keys] *after* 'chmod': "
+stat -c %a /home/tslade/.ssh/authorized_keys
 
 # Set up the git config
 git config --global user.name tt-ubuntu
@@ -71,7 +83,13 @@ sudo mkdir /home/software-assets    # miniconda installer
 sudo mkdir /opt/miniconda3          # shared miniconda executable
 
 # Assign ownership of the projects folder to group_TT
+echo ">> Ownership of the [/home/projects] folder *before* 'chgrp': "
+stat -c %a /home/projects
 sudo chgrp -R group_tt /home
+echo ">> Ownership of the [/home/projects] folder *after* 'chgrp': "
+stat -c %a /home/projects
+echo ">> Ownership of the [/opt] folder *before* 'chgrp': "
+stat -c %a /opt
 sudo chgrp -R group_tt /opt
 sudo chmod 770 /home
 sudo chmod 770 /opt
@@ -96,19 +114,19 @@ mv Miniconda3-latest-Linux-x86_64.sh /home/software-assets
 
 # Install miniconda
 sudo sh /home/software-assets/Miniconda3-latest-Linux-x86_64.sh -p /opt/miniconda3 -f
-source /opt/miniconda3/bin/activate
+sudo source /opt/miniconda3/bin/activate
 # conda init
 
 # Create new users for our teammates
 # sh projects/teacherprints/make-users.sh tslade kdarnell lmoore ajacobson
-sh projects/teacherprints/make-users.sh cora naomi
+sh projects/teacherprints/make-users.sh cj anna
 
 # Make the provisioning script executable
 chmod +x projects/teacherprints/provision-conda-envs.sh
 
 # Provision each user with our conda set up
 # for usern in tslade kdarnell lmoore ajacobson; do
-for usern in cora naomi; do
+for usern in cj anna; do
     sh projects/teacherprints/provision-miniconda.sh -u $usern -a
     sudo -u $usern projects/teacherprints/provision-conda-envs.sh
 done
@@ -117,3 +135,14 @@ done
 # https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html#:~:text=The%20user%20file%2Dcreation%20mode,Symbolic%20values
 # https://stackoverflow.com/questions/18599711/how-can-i-split-a-shell-command-over-multiple-lines-when-using-an-if-statement
 # https://www.tecmint.com/add-users-in-linux/
+# https://stackoverflow.com/questions/7533661/how-to-log-ssh-debug-info
+# https://unix.stackexchange.com/questions/127432/logging-ssh-access-attempts
+# https://unix.stackexchange.com/questions/21251/execute-vs-read-bit-how-do-directory-permissions-in-linux-work
+#
+# To undo prior issues:
+# $ sudo rm -rf /projects /home/tslade /home/cora/ /home/naomi/ /opt/ /home/software-assets /home/projects/ workspace-setup.sh
+# $ sudo groupdel group_tt
+### If you run the recovery first and THEN under the prior issues, you get locked out...
+# To recover:
+# $ sudo chown ubuntu:ubuntu /home/ubuntu/
+# $ sudo chmod 750 /home/ubuntu

@@ -14,7 +14,7 @@ do
     sudo useradd -m -U -s '/bin/bash' -k --disabled-password -c "" $newuser
 
     # Change the password for that user
-    echo "\n>> Make a password for the user we just created:"
+    echo "\n>> Make a password for [$newuser], the user we just created:"
     sudo passwd $newuser
 
     # Add that user to the sudo-ers group
@@ -23,7 +23,7 @@ do
     sudo usermod -aG group_tt $newuser
 
     # Change to that user
-    echo "\n>> Verifying the new user exists and we can see their files"
+    echo "\n>> Verifying the new user [$newuser] exists and we can see their files"
     sudo -i -u $newuser echo "++ Executing as $USER"
     sudo -i -u $newuser ls -lah
 
@@ -46,3 +46,4 @@ done
 # https://tecadmin.net/tutorial/bash-scripting/bash-command-arguments/
 # https://tecadmin.net/tutorial/bash-scripting/bash-command-arguments/
 # https://stackoverflow.com/questions/5474732/how-can-i-add-a-help-method-to-a-shell-script/5476278
+# https://askubuntu.com/questions/311558/ssh-permission-denied-publickey
