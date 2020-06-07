@@ -120,7 +120,7 @@ sudo source /opt/miniconda3/bin/activate
 
 # Create new users for our teammates
 # sh projects/teacherprints/make-users.sh tslade kdarnell lmoore ajacobson
-sh projects/teacherprints/make-users.sh cj anna
+sh projects/teacherprints/make-users.sh tslade lmoore kdarnell ajacobson
 
 # Make the provisioning script executable
 chmod +x projects/teacherprints/provision-conda-envs.sh
