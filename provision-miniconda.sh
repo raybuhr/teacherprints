@@ -41,11 +41,12 @@ echo ">> User [$user] will install Miniconda from [$loc]"
 # sudo ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
 if a_flag=='true'; then
-    echo "\n>> Attempting to activate conda for the user..."
-    source /opt/miniconda3/bin/activate
+    echo "\n>> Adding to -activate conda- to user's .bashrc..."
+    # su - $user source /opt/miniconda3/bin/activate
     sudo chmod 777 /home/$user/.bashrc
-    sudo printf "\nconda activate" >> /home/$user/.bashrc
-    sudo chmod 0644 /home/$user/.bashrc
+    # sudo printf "\nconda activate" >> /home/$user/.bashrc
+    echo "source /opt/miniconda3/bin/activate" >> /home/$user/.bashrc
+    sudo chmod 644 /home/$user/.bashrc
 fi
 
 # References:

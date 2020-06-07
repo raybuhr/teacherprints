@@ -11,7 +11,7 @@
 for newuser in $@
 do
     # Create the new user; don't require a password at that stage
-    sudo adduser --disabled-password --gecos "" $newuser
+    sudo useradd --disabled-password --gecos "" $newuser
 
     # Change the password for that user
     echo "\n>> Make a password for the user we just created:"
