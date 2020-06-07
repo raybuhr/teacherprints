@@ -8,10 +8,14 @@
 # echo ">> This creates a password for the root user on first run:"
 # sudo passwd # make new password -ubuntu-
 
+# useradd is the low-level one; let's be consistent about using 'adduser'. Its
+# defaults are closer to what we need. **N.B**: the option flags are different
+
 for newuser in $@
 do
     # Create the new user; don't require a password at that stage
-    sudo useradd -m -U -s '/bin/bash' -k --disabled-password -c "" $newuser
+    # sudo useradd -m -U -s '/bin/bash' -k --disabled-password -c "" $newuser
+    sudo adduser --disabled-password --gecos "" $newuser
 
     # Change the password for that user
     echo "\n>> Make a password for [$newuser], the user we just created:"
