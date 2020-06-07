@@ -11,7 +11,7 @@
 for newuser in $@
 do
     # Create the new user; don't require a password at that stage
-    sudo useradd -m -U -s '/bin/bash' -k --disabled-password --c "" $newuser
+    sudo useradd -m -U -s '/bin/bash' -k --disabled-password -c "" $newuser
 
     # Change the password for that user
     echo "\n>> Make a password for the user we just created:"
