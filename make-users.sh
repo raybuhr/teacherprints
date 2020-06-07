@@ -11,7 +11,7 @@
 for newuser in $@
 do
     # Create the new user; don't require a password at that stage
-    sudo useradd --disabled-password --gecos "" $newuser
+    sudo adduser -m -U -s '/bin/bash' -k --disabled-password --gecos "" $newuser
 
     # Change the password for that user
     echo "\n>> Make a password for the user we just created:"
@@ -37,6 +37,7 @@ do
     sudo cp ~/.ssh/authorized_keys /home/$newuser/.ssh/authorized_keys
     sudo chmod 700 /home/$newuser/.ssh
     sudo chmod 644 /home/$newuser/.ssh/authorized_keys
+    sudo chown -R /home/$newuser
     # Wrap up
     echo "\n>> All done! Try switching over to the new user via 'su - $newuser'"
 done
