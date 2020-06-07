@@ -157,7 +157,7 @@ Our references for this section are posts from
     ```
 As a result of the above, now instead of typing in
 ```bash
-$ ssh -i ".secrets/teacherprints-ec2.pem" tslade@ec2-3-23-90-91.us-east-2.compute.amazonaws.com`
+$ ssh -i ".secrets/teacherprints-ec2.pem" tslade@ec2-3-23-90-91.us-east-2.compute.amazonaws.com
 ```
 I can simply invoke
 ```bash
@@ -297,3 +297,6 @@ A few important troubleshooting points:
 ```bash
 $ aws ec2 describe-security-groups --group-ids [id here] --region [region here] > vpc-security-group.yml
 ```
+
+In the event you use SSH for communication with GitHub and you're not able to make commits to the repo or clone it, the instructions at [_How to use SSH keys for authentication_](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/) can help sort you out.
+
