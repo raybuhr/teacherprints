@@ -45,10 +45,11 @@ sudo usermod -aG group_tt ubuntu
 # '-G'      : assign the user to additional secondary groups (no spaces in options!)
 # '-c'      : skip the rest of the user contact info. stuff (a.k.a. 'gecos')
 
-sudo useradd -m -U -s '/bin/bash' -G sudo,group_tt -c "Tim Slade" tslade
+# sudo useradd -m -U -s '/bin/bash' -G sudo,group_tt -c "Tim Slade" tslade
+sudo adduser --gecos "Tim Slade" tslade
 
 # Verify that the user-creation worked as expected
-cut -d : -f 1 /etc/passwd | sort
+cut -d : -f 1 /etc/passwd | grep '^tslade'
 
 sudo mkdir -p /home/tslade/.ssh
 echo ">> [tslade]'s permissions for [/home/tslade] *before* 'chown': "
