@@ -78,7 +78,7 @@ By default, the `YourUserNameHere` value for an EC2 Ubuntu instance is `ubuntu`.
 $ sudo adduser NewUserName
 
 # Add the user to the sudo usergroup
-$ sudo usermod -aG NewUserName
+$ sudo usermod -aG sudo NewUserName
 
 # Change to the NewUserName
 $ sudo su - NewUserName
