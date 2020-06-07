@@ -1,8 +1,5 @@
 #! /usr/bin/bash
 # Run this from within the home folder of the root (ubuntu) user
-# $# - number of arguments passed to the script
-# $1 to $n - argument position. Note for >1 digit n need to enclose in {} as ${10}
-# $@ - all arguments as a 0-indexed array
 
 u_flag=''
 l_flag=''
