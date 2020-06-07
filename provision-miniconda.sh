@@ -32,15 +32,17 @@ done
 echo ">> User [$user] will install Miniconda from [$loc]"
 
 # This silently installs the Miniconda application to the user's $HOME
-sudo -i -u $user $loc/Miniconda3-latest-Linux-x86_64.sh -b -f
+# sudo -i -u $user $loc/Miniconda3-latest-Linux-x86_64.sh -b -f
 
 # This shortcuts the need for the user to run `$ conda init` and then logout/back in
 # the first time they login as user
-echo ">> Linking root's profile.d to [$user]'s profile.d"
-sudo ln -s /home/$user/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+# echo ">> Linking root's profile.d to [$user]'s profile.d"
+# sudo ln -s /etc/profile.d/conda.sh /home/$user/miniconda3/etc/profile.d/conda.sh
+# sudo ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
 if a_flag=='true'; then
     echo "\n>> Attempting to activate conda for the user..."
+    source /opt/miniconda3/bin/activate
     sudo chmod 777 /home/$user/.bashrc
     sudo printf "\nconda activate" >> /home/$user/.bashrc
     sudo chmod 0644 /home/$user/.bashrc

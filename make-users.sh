@@ -20,6 +20,7 @@ do
     # Add that user to the sudo-ers group
     echo "\n>> Adding the new user to the sudo-ers group"
     sudo usermod -aG sudo $newuser
+    sudo usermod -aG group_tt $newuser
 
     # Change to that user
     echo "\n>> Verifying the new user exists and we can see their files"
@@ -34,7 +35,8 @@ do
     echo "\n>> Copying over the necessary public keys so the new user can SSH in"
     sudo mkdir -p /home/$newuser/.ssh
     sudo cp ~/.ssh/authorized_keys /home/$newuser/.ssh/authorized_keys
-
+    sudo chmod 700 /home/$newuser/.ssh
+    sudo chmod 644 /home/$newuser/.ssh/authorized_keys
     # Wrap up
     echo "\n>> All done! Try switching over to the new user via 'su - $newuser'"
 done
