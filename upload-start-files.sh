@@ -4,7 +4,7 @@
 ipAdd=''
 verbose=ßfalse
 pem_loc=.secrets/teacherprints-ec2.pem
-pro_loc=step-by-step.sh
+pro_loc=provisioning.sh
 gh_loc=~/.ssh/id_rsa
 targName=ts_github_key
 
