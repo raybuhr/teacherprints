@@ -104,7 +104,6 @@ sudo cd projects
 # Clone the GitHub repo
 # git clone https://github.com/TSSlade/teacherprints.git
 git clone git@github.com:TSSlade/teacherprints.git
-chmod -R 777 /home/projects/teacherprints
 
 # Go back to root user's $HOME
 cd ~
