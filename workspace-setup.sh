@@ -25,17 +25,17 @@
 #### scp -i .secrets/teacherprints-ec2.pem .secrets/teacherprints-ec2.pem ubuntu@ec2-18-217-25-162.us-east-2.compute.amazonaws.com:ts_github_key
 
 # Activate the ssh-agent application and add the key for GitHub
-# echo ">> [$USER]'s permissions for [.ssh]: "
-# stat -c %a /home/ubuntu/.ssh
-# eval `ssh-agent -s`
-# ssh-add ~/.ssh/ts_github_key
-# echo ">> [$USER]'s permissions for [.ssh/ts_github_key]: "
-# stat -c %a /home/ubuntu/.ssh/ts_github_key
-# # Create a group for the Team TeacherPrint users
+echo ">> [$USER]'s permissions for [.ssh]: "
+stat -c %a /home/ubuntu/.ssh
+eval `ssh-agent -s`
+ssh-add ~/.ssh/ts_github_key
+echo ">> [$USER]'s permissions for [.ssh/ts_github_key]: "
+stat -c %a /home/ubuntu/.ssh/ts_github_key
+# Create a group for the Team TeacherPrint users
 # sudo groupadd group_tt
 
-# # Add the current user to it
-# sudo usermod -aG group_tt ubuntu
+# Add the current user to it
+sudo usermod -aG group_tt ubuntu
 
 # ### Create a new user with the following characteristics
 # # '-m'      : invoke the 'create home' option
@@ -98,11 +98,13 @@ sudo chmod 770 /opt
 # Create a symbolic link to the place we want to clone the
 # GitHub repo to and go to it
 sudo ln -s /home/projects projects
-cd projects
+sudo chown -R ubuntu:ubuntu projects
+sudo cd projects
 
 # Clone the GitHub repo
 # git clone https://github.com/TSSlade/teacherprints.git
 git clone git@github.com:TSSlade/teacherprints.git
+chmod -R 777 /home/projects/teacherprints
 
 # Go back to root user's $HOME
 cd ~

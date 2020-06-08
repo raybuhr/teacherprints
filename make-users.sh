@@ -41,7 +41,7 @@ do
     sudo cp ~/.ssh/authorized_keys /home/$newuser/.ssh/authorized_keys
     sudo chmod 700 /home/$newuser/.ssh
     sudo chmod 644 /home/$newuser/.ssh/authorized_keys
-    sudo chown -R /home/$newuser
+    sudo chown -R $newuser /home/$newuser
     # Wrap up
     echo "\n>> All done! Try switching over to the new user via 'su - $newuser'"
 done
