@@ -8,21 +8,26 @@
 # echo ">> This creates a password for the root user on first run:"
 # sudo passwd # make new password -ubuntu-
 
+# useradd is the low-level one; let's be consistent about using 'adduser'. Its
+# defaults are closer to what we need. **N.B**: the option flags are different
+
 for newuser in $@
 do
     # Create the new user; don't require a password at that stage
+    # sudo useradd -m -U -s '/bin/bash' -k --disabled-password -c "" $newuser
     sudo adduser --disabled-password --gecos "" $newuser
 
     # Change the password for that user
-    echo "\n>> Make a password for the user we just created:"
+    echo "\n>> Make a password for [$newuser], the user we just created:"
     sudo passwd $newuser
 
     # Add that user to the sudo-ers group
     echo "\n>> Adding the new user to the sudo-ers group"
     sudo usermod -aG sudo $newuser
+    sudo usermod -aG group_tt $newuser
 
     # Change to that user
-    echo "\n>> Verifying the new user exists and we can see their files"
+    echo "\n>> Verifying the new user [$newuser] exists and we can see their files"
     sudo -i -u $newuser echo "++ Executing as $USER"
     sudo -i -u $newuser ls -lah
 
@@ -34,7 +39,9 @@ do
     echo "\n>> Copying over the necessary public keys so the new user can SSH in"
     sudo mkdir -p /home/$newuser/.ssh
     sudo cp ~/.ssh/authorized_keys /home/$newuser/.ssh/authorized_keys
-
+    sudo chmod 700 /home/$newuser/.ssh
+    sudo chmod 644 /home/$newuser/.ssh/authorized_keys
+    sudo chown -R $newuser /home/$newuser
     # Wrap up
     echo "\n>> All done! Try switching over to the new user via 'su - $newuser'"
 done
@@ -43,3 +50,4 @@ done
 # https://tecadmin.net/tutorial/bash-scripting/bash-command-arguments/
 # https://tecadmin.net/tutorial/bash-scripting/bash-command-arguments/
 # https://stackoverflow.com/questions/5474732/how-can-i-add-a-help-method-to-a-shell-script/5476278
+# https://askubuntu.com/questions/311558/ssh-permission-denied-publickey
