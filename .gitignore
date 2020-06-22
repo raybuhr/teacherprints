@@ -1,5 +1,7 @@
 .secrets/*
 *conflicted*
+*.wav
+.boneyard/*
 DiViMe/*
 *DiViMe/*
 DiViMe/*
