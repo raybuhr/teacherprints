@@ -7,6 +7,18 @@ def rttm_to_speaker_activity(df, outfile=None):
         to support a visualization of type 'Speaker Activity' and optionally
         export to a csv located at {outfile}
 
+        The df's column names must be
+            'task',
+            'inputFile',
+            'one',
+            'start',
+            'duration',
+            'NA_1',
+            'NA_2',
+            'class',
+            'NA_3', and
+            'NA_4'
+
         df = Pandas DataFrame containing a standard .rttm file
         outfile = destination for exported CSV (path, filename, extension)
     """
@@ -35,11 +47,12 @@ def rttm_to_speaker_activity(df, outfile=None):
     })
 
     # Remap the model classes for this viz's purposes
-    vizframe['LABEL'] = vizframe['LABEL'].map({
+    vizframe['LABEL'] = vizframe['LABEL'].replace({
         'KCHI': 'CHILD',
         'CHI': 'CHILD',
         'FEM': 'ADULT',
-        'MAL': 'ADULT'
+        'MAL': 'ADULT',
+       # 'SPEECH':'SPEECH'
     })
 
     # Filter the dataframe to just the 'clean' (non-'SPEECH') classes
