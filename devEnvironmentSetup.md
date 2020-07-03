@@ -44,3 +44,4 @@ You can create a base env using `$ conda env create -f YourEnvironmentDefinition
 + https://stackoverflow.com/questions/27473526/download-only-audio-from-youtube-video-using-youtube-dl-in-python-script
 + https://stackoverflow.com/questions/41240726/change-the-output-name-when-download-with-youtube-dl-using-python
 + https://github.com/kkroening/ffmpeg-python
++ https://askubuntu.com/questions/966488/how-do-i-fix-r-command-not-found-errors-running-bash-scripts-in-wsl
