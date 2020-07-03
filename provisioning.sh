@@ -78,27 +78,30 @@ do
 
    sudo chmod 777 /home/${USERN}/.ssh/authorized_keys
    sudo cat /home/ubuntu/.ssh/authorized_keys >> /home/${USERN}/.ssh/authorized_keys
-   sudo chown -R ${USERN}:${USERN} /home/${USERN}
+   sudo chown -R ${USERN}:sudo /home/${USERN}
    sudo chmod 700 /home/${USERN}/.ssh
    sudo chmod 600 /home/${USERN}/.ssh/authorized_keys
    sudo mkdir -m 777 /home/${USERN}/.conda
-   sudo chown -R ${USERN}:${USERN} /home/${USERN}/.conda
+   sudo chown -R ${USERN}:sudo /home/${USERN}/.conda
    sudo chmod -R 755 /home/${USERN}
    printf "\n>> Would you like to add another user? [y] or [n] "
    read -r answer
 done
 
+sudo chown -R :sudo /opt/miniconda3/
+sudo chmod -R 777 /opt/miniconda3/
+
 UNUM=0
 while [[ ${UNUM} -lt ${#UARRAY[@]} ]]
 do
-   printf "\n>> User: ${UARRAY[${UNUM}]}"
-   printf "\n>> Configuring [${UARRAY[${UNUM}]}]'s -base- env"
+   printf "\n>> User: ${UARRAY[${UNUM}]}\n"
+   printf "\n>> Configuring [${UARRAY[${UNUM}]}]'s -base- env\n"
    conda env create -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/base-env.yml
-   printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -viz- tools"
+   printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -viz- tools\n"
    conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/viz-env.yml
-   printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -modeling- tools"
+   printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -modeling- tools\n"
    conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/modeling-env.yml
-   sudo chown 777 ${UARRAY[${UNUM}]}:${UARRAY[${UNUM}]} /home/${UARRAY[${UNUM}]}/.conda
+   sudo chown ${UARRAY[${UNUM}]}:${UARRAY[${UNUM}]} /home/${UARRAY[${UNUM}]}/.conda
    (( UNUM+=1 ))
 done
 
