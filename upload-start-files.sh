@@ -2,7 +2,7 @@
 # Run this from within the home folder of the root (ubuntu) user
 
 ipAdd=''
-verbose=ßfalse
+verbose=false
 pem_loc=.secrets/teacherprints-ec2.pem
 pro_loc=provisioning.sh
 gh_loc=~/.ssh/id_rsa
@@ -31,12 +31,12 @@ done
 
 echo ">> Uploading the GitHub key via: "
 echo "\tscp -i ${pem_loc} ${gh_loc} ubuntu@${ipAdd}:~/.ssh/${targName}"
-scp -i ${pem_loc} ${gh_loc} ubuntu@${ipAdd}:~/.ssh/${targName}
+scp -i "${pem_loc}" "${gh_loc}" ubuntu@"${ipAdd}":~/.ssh/${targName}
 echo ">> Uploading the provisioning script via: "
 echo "\tscp -i ${pem_loc} ${pro_loc} ubuntu@${ipAdd}:provisioning.sh"
-scp -i ${pem_loc} ${pro_loc} ubuntu@${ipAdd}:provisioning.sh
+scp -i "${pem_loc}" "${pro_loc}" ubuntu@"${ipAdd}":provisioning.sh
 
 # Logging in
-ssh -i ${pem_loc} ubuntu@${ipAdd}
+ssh -i "${pem_loc}" ubuntu@"${ipAdd}"
 
 # https://unix.stackexchange.com/questions/536794/how-to-use-variable-in-scp-command-for-multiple-files
