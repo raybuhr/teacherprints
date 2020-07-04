@@ -98,8 +98,9 @@ UNUM=0
 while [[ ${UNUM} -lt ${#UARRAY[@]} ]]
 do
    printf "\n>> User: ${UARRAY[${UNUM}]}\n"
-   sudo mkdir -m 777 /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints
+   sudo mkdir -m 777 -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints
    sudo chown -R ${UARRAY[${UNUM}]}:sudo /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints
+   sudo chmod -R 777 /home/${UARRAY[${UNUM}]}/.conda/envs
    printf "\n>> Configuring [${UARRAY[${UNUM}]}]'s -base- env\n"
    conda env create -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/base-env.yml
    printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -viz- tools\n"
@@ -108,8 +109,12 @@ do
    conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/modeling-env.yml
    # sudo chown ${UARRAY[${UNUM}]}:${UARRAY[${UNUM}]} /home/${UARRAY[${UNUM}]}/.conda
    sudo chown -R ${UARRAY[${UNUM}]}:sudo /home/${UARRAY[${UNUM}]}/.conda
+   conda config --append envs_dirs /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints
    (( UNUM+=1 ))
 done
+
+
+# sudo mkdir -m 777 -p /home/kdarnell/.conda/envs/teacherprints; sudo chown -R kdarnell:sudo /home/kdarnell/.conda/envs/teacherprints; sudo chmod -R 777 /home/kdarnell/.conda/envs; conda env create -p /home/kdarnell/.conda/envs/teacherprints -f /home/projects/teacherprints/base-env.yml; conda env update -p /home/kdarnell/.conda/envs/teacherprints -f /home/projects/teacherprints/viz-env.yml; conda env update -p /home/kdarnell/.conda/envs/teacherprints/modeling-env.yml -f /home/projects/teacherprints/modeling-env.yml; sudo chown -R kdarnell:sudo /home/kdarnell/.conda
 
 # https://stackoverflow.com/questions/46607012/bash-script-while-loop-with-read-input-from-user
 # https://stackoverflow.com/questions/2150882/how-to-automatically-add-user-account-and-password-with-a-bash-script
