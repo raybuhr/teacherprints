@@ -1,0 +1,41 @@
+// user-variables.scss
+// Use this to overwrite Bootstrap and Front variables
+//
+
+
+// Example of a variable override to change Front's primary color and font size
+// Remove the "//" to comment it in and see it in action!
+
+//$primary: #FDB515; // Primary Color 1: California Gold
+$primary: #00B0DA; // Primary Color 2: Lawrence
+
+
+$secondary: #003262; //Berkeley Blue
+
+$navy: #003262; //Berkeley Blue
+$blue: #3B7EA1; //Founder’s Rock
+$indigo: #B9D3B6; //Sather Gate (Seafoam)
+$purple: #46535E; //Pacific (Steel Blue)
+$pink: #EE1F60; //Rose Garden
+$red: #ED4E33; //Golden Gate
+$orange: #D9661F; //Wellman Tile
+$yellow: #FDB515; //California Gold
+$green: #859438; //Soybean
+$teal: #00A598; //Lap Lane
+$cyan: #00B0DA; //Lawrence
+$white: #FFFFFF; //White
+$gray: #EEEEEE; //Grey
+$gray-dark: #888888; //Web Grey
+$success: #00A598; //Lap Lane
+$info: #00B0DA; //Lawrence
+$warning: #D9661F; //Wellman Tile
+$danger: #ED4E33; //Golden Gate
+$light: #DDD5C7; //Bay Fog
+$dark: #46535E; //Pacific (Steel Blue)
+
+//$font-size-base: .875rem;
+
+
+
+// The color of the SVG loader should be modified manually.
+// See assets/svg/components/circle-preloader.svg
