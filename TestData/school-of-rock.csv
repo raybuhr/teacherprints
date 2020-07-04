@@ -1,0 +1,17 @@
+TOTAL,432.6,,,7 min 13 sec,,
+STATEMENTS,151,,,,,
+Statements/Min,20.9,,,,,
+,,,,,,
+SPEECH,391.0,90%,,6 min 31 sec,,
+UNLABELED,41.6,10%,,42 sec,,
+,,,,,,
+,,,,,,
+ADULT,356.5,82%,91%,5 min 56 sec,,
+CHILD,34.5,8%,9%,35 sec,,
+UNLABELED,41.6,10%,-,42 sec,,
+Adult : Child,10.33,[Calculation does not include unlabeled time],619.8440806,10 min 20 sec,,
+Spectrum,0.00,[Calculation is 1 - (Adult/Child)],,,,
+,,,,,,
+,,,50%,91%,42%,0%
+,,,50%,9%,58%,100%
+,,,0.00,-0.82,0.16,1.00
