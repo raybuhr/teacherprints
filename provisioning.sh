@@ -8,6 +8,9 @@ ssh-add ~/.ssh/ts_github_key
 # Change the permissions on the ts_github_key
 # sudo chmod 600 ~/.ssh/ts_github_key
 
+# Create a sudo group to which this (ubuntu) user belongs...
+# this is important for the later task of provisioning conda envs
+
 # Create the space where the GitHub repo will live
 sudo mkdir /home/projects
 sudo ln -s /home/projects ~/projects
@@ -95,13 +98,16 @@ UNUM=0
 while [[ ${UNUM} -lt ${#UARRAY[@]} ]]
 do
    printf "\n>> User: ${UARRAY[${UNUM}]}\n"
+   sudo mkdir -m 777 /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints
+   sudo chown -R ${UARRAY[${UNUM}]}:sudo /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints
    printf "\n>> Configuring [${UARRAY[${UNUM}]}]'s -base- env\n"
    conda env create -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/base-env.yml
    printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -viz- tools\n"
    conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/viz-env.yml
    printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -modeling- tools\n"
    conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/modeling-env.yml
-   sudo chown ${UARRAY[${UNUM}]}:${UARRAY[${UNUM}]} /home/${UARRAY[${UNUM}]}/.conda
+   # sudo chown ${UARRAY[${UNUM}]}:${UARRAY[${UNUM}]} /home/${UARRAY[${UNUM}]}/.conda
+   sudo chown -R ${UARRAY[${UNUM}]}:sudo /home/${UARRAY[${UNUM}]}/.conda
    (( UNUM+=1 ))
 done
 
