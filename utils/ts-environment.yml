@@ -1,0 +1,35 @@
+name: tslade
+dependencies:
+  - python=3.8
+  # Scientific computing
+  - numpy
+  - pandas
+  - scikit-learn
+  # Visualization packages
+  - altair
+  - matplotlib
+  - bokeh
+  - scikit-image
+  # EDA
+  - jupyter
+  - jupyterlab
+  - voila
+  # Web hosting
+  - flask
+  - nodejs
+  # Audio analysis
+  - librosa
+  - ffmpeg-python
+  - pip
+  - pip:
+    - pafy
+    - sox
+    - soundfile
+    - youtube-dl
+  # Statistical modeling just in case
+  - r-base
+  - r-essentials
+
+channels:
+  - conda-forge
+  - defaults
