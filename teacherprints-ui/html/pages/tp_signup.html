@@ -17,6 +17,7 @@
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="../../assets/vendor/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="../../assets/vendor/ion-rangeslider/css/ion.rangeSlider.css">
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
@@ -28,12 +29,6 @@
       <div id="logoAndNav" class="container-fluid">
         <!-- Nav -->
         <nav class="navbar navbar-expand header-navbar">
-          <!-- White Logo
-          <a class="d-none d-lg-flex navbar-brand header-navbar-brand" href="../landings/index.html" aria-label="Front">
-            <img src="../../assets/svg/logos/tp-logo-white.svg" alt="Logo">
-          </a>
-          End White Logo -->
-
           <!-- Default Logo -->
           <a class="d-flex d-lg-none navbar-brand header-navbar-brand header-navbar-brand-collapsed" href="../landings/index.html" aria-label="Front">
             <img src="../../assets/svg/logos/logo.svg" alt="Logo">
@@ -60,18 +55,6 @@
     <div class="d-flex align-items-center position-relative vh-lg-100">
       <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center bg-primary vh-lg-100 px-0" style="background-image: url(../../assets/svg/components/abstract-shapes-20.svg);">
         <div class="w-100 p-5">
-          <!-- SVG Quote
-          <figure class="text-center mb-5 mx-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
-               viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
-              <path fill="#fff" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
-                C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5chttps://zoom.us/j/71530410910-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
-                c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
-                C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z"/>
-            </svg>
-          </figure>
-          End SVG Quote -->
-
           <!-- Testimonials Carousel Main -->
           <div id="testimonialsNavMain" class="js-slick-carousel slick mb-4"
                data-hs-slick-carousel-options='{
@@ -83,8 +66,8 @@
                }'>
             <div class="js-slide">
               <!-- Testimonials -->
-              <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h3 text-white font-weight-normal mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </blockquote>
+              <div class="w-md-80 w-lg-50 text-center mx-auto">
+                <blockquote class="h3 text-white font-weight-normal mb-4">Talk management feedback made for every day</blockquote>
                 <!--<span class="d-block text-white-70">Christina Kray, Google</span>-->
               </div>
               <!-- End Testimonials -->
@@ -92,8 +75,8 @@
 
             <div class="js-slide">
               <!-- Testimonials -->
-              <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h3 text-white font-weight-normal mb-4">Cras semper odio vel odio laoreet semper.</blockquote>
+              <div class="w-md-80 w-lg-50 text-center mx-auto">
+                <blockquote class="h3 text-white font-weight-normal mb-4">Innovation backed by cognitive and data science</blockquote>
                 <!--<span class="d-block text-white-70">James Austin, Slack</span>-->
               </div>
               <!-- End Testimonials -->
@@ -101,8 +84,8 @@
 
             <div class="js-slide">
               <!-- Testimonials -->
-              <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h3 text-white font-weight-normal mb-4">Suspendisse hendrerit lorem in ex elementum ornare.</blockquote>
+              <div class="w-md-80 w-lg-50 text-center mx-auto">
+                <blockquote class="h3 text-white font-weight-normal mb-4">Artificial intelligence (AI) converts voices to visuals</blockquote>
                 <!--<span class="d-block text-white-70">Charlotte Moore, Amazon</span>-->
               </div>
               <!-- End Testimonials -->
@@ -166,13 +149,13 @@
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
-                <label class="input-label" for="signinSrLabel">Lesson Label</label>
+                <label class="input-label text-cap text-primary font-weight-bold" for="signinSrLabel">Lesson Label</label>
                 <input type="label" class="form-control" name="lesson" id="signinLabel" placeholder="e.g. Kindergarten Math Lesson" aria-label="Label" required
                        data-msg="Please enter a label to identify your lesson.">
               </div>
               <!-- End Form Group -->
 
-              <!-- Form Group -->
+              <!-- Form Group
               <div class="js-form-message form-group">
                 <label class="input-label" for="signinSex">Instructor Sex</label>
                 <input list="sex" class="form-control" name="usersex" id="signinSex" required>
@@ -182,38 +165,35 @@
                   <option value="Prefer Not to Answer">
                 </datalist>
               </div>
-              <!-- End Form Group -->
-
-              <!-- Form Group -->
-              <div class="js-form-message form-group">
-                <label class="input-label" for="signinClass">Class Size</label>
-                <input list="classsize" class="form-control" name="classsize" id="signinClass" required>
-                <datalist id="classize">
-                  <option value="<10 Students">
-                  <option value="10-30 Students">
-                  <option value=">30 Students">
-                  <option value="Class Size Not Known">
-                </datalist>
-              </div>
-              <!-- End Form Group -->
-
-              <!-- Form Group
-              <div class="js-form-message form-group">
-                <label class="input-label" for="signinSrConfirmPassword">Target/label>
-                <input type="password" class="form-control" name="confirmPassword" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
-                       data-msg="Password does not match the confirm password.">
-              </div>
               End Form Group -->
 
               <!-- Form Group -->
+              <div class="js-range-slider form-group">
+                <label class="input-label text-cap text-primary font-weight-bold" for="talktimeGoal">Talk Time Goal</label>
+                <label class="input-label" for="talktimeGoal">How much time did you want to spend talking in this lesson?</label-->
+                <input type="range" class="form-control" name="goal" id="talktimeGoal"
+                       data-msg="How much time id you want to spend talking in this lesson?">
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="js-range-slider form-group">
+                <label class="input-label text-cap text-primary font-weight-bold" for="talktimePrediction">Talk Time Prediction</label>
+                <label class="input-label" for="talktimePrediction">How much time do you think you spent talking in this lesson?</label>
+                <input type="range" class="form-control" name="goal" id="talktimeGoal"
+                       data-msg="How much time do you think you spent talking in this lesson?">
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
               <div class="js-form-message form-group">
-                <label class="input-label" for="signinUploadAudio">Audio File</label>
+                <label class="input-label text-cap text-primary font-weight-bold" for="signinUploadAudio">Audio File</label>
                 <input type="file" class="form-control" name="audio" id="signinUploadAudio"
                        data-msg="Please upload your audio file here.">
               </div>
               <!-- End Form Group -->
 
-              <!-- Checkbox -->
+              <!-- Checkbox
               <div class="js-form-message mb-5">
                 <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
                   <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox" required
@@ -226,7 +206,7 @@
                   </label>
                 </div>
               </div>
-              <!-- End Checkbox -->
+              End Checkbox -->
 
               <!-- Button -->
               <div class="row align-items-center mb-5">
@@ -237,7 +217,7 @@
 
                 <div class="col-sm-6 text-sm-right">
                   <!--<button type="submit" class="btn btn-primary transition-3d-hover">Generate TeacherPrint</button>-->
-                  <button class="btn btn-sm btn-primary transition-3d-hover" href="../pages/teacherprint.html" target="_blank">Generate TeacherPrint</button>
+                  <button class="btn btn-sm btn-primary transition-3d-hover" href="../portfolio/tp_teacherprint_sum.html" target="_blank">Generate TeacherPrint</button>
                 </div>
               </div>
               <!-- End Button -->
@@ -259,11 +239,13 @@
   <!-- JS Implementing Plugins -->
   <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
   <script src="../../assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="../../assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 
   <!-- JS Front -->
   <script src="../../assets/js/hs.core.js"></script>
   <script src="../../assets/js/hs.validation.js"></script>
   <script src="../../assets/js/hs.slick-carousel.js"></script>
+  <script src="../../assets/js/components/hs.range-slider.js"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -272,6 +254,9 @@
       $('.js-slick-carousel').each(function() {
         var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
       });
+
+      // initialization of forms
+      $.HSCore.components.HSRangeSlider.init('.js-range-slider');
 
       // initialization of form validation
       $('.js-validate').each(function() {
