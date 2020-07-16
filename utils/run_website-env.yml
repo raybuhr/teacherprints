@@ -1,0 +1,74 @@
+name: run_website
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1
+  - alembic=1.4.2
+  - ca-certificates=2020.6.20
+  - certifi=2020.6.20
+  - click=7.1.2
+  - email_validator=1.1.1
+  - expat=2.2.9
+  - flask=1.1.2
+  - flask-login=0.5.0
+  - flask-migrate=2.4.0
+  - flask-sqlalchemy=2.4.3
+  - flask-wtf=0.14.3
+  - fontconfig=2.13.0
+  - freetype=2.10.2
+  - giflib=5.1.4
+  - gunicorn=20.0.4
+  - icu=58.2
+  - itsdangerous=1.1.0
+  - jinja2=2.11.2
+  - jpeg=9b
+  - libedit=3.1.20191231
+  - libffi=3.3
+  - libgd=2.2.5
+  - libpng=1.6.37
+  - libtiff=4.1.0
+  - libuuid=1.0.3
+  - libwebp=1.0.1
+  - libxml2=2.9.10
+  - libxslt=1.1.34
+  - lz4-c=1.9.2
+  - mako=1.1.0
+  - markupsafe=1.1.1
+  - ncurses=6.2
+  - nginx=1.15.5
+  - openssl=1.1.1g
+  - pcre=8.44
+  - pip=20.1.1
+  - python=3.8.3
+  - python-dateutil=2.8.1
+  - python-editor=1.0.4
+  - python_abi=3.8
+  - readline=8.0
+  - setuptools=47.3.1
+  - six=1.15.0
+  - sqlalchemy=1.3.18
+  - sqlite=3.32.3
+  - tk=8.6.10
+  - werkzeug=1.0.1
+  - wheel=0.34.2
+  - wtforms=2.3.1
+  - xz=5.2.5
+  - zlib=1.2.11
+  - zstd=1.4.4
+  - python-dotenv-0.14.0
+# Uncomment the following lines on Ubuntu...
+# but leave them commented out on Mac. These libraries
+# don't exist on Mac
+  # - libgcc-ng=9.1.0
+  # - libgfortran-ng=7.3.0
+  # - libstdcxx-ng=9.1.0
+  # - ld_impl_linux-64=2.33.1
+# Leave uncommented when creating in the first place on
+# server. Local install may have different path and so
+# the prefix would not work
+# prefix: /home/tpwebsite/.conda/envs/run_website
+
+
+# References:
+# https://stackoverflow.com/questions/48439159/failed-to-create-anaconda-environment-resolvepackagenotfound

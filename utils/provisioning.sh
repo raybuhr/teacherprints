@@ -102,11 +102,11 @@ do
    sudo chown -R ${UARRAY[${UNUM}]}:sudo /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints
    sudo chmod -R 777 /home/${UARRAY[${UNUM}]}/.conda/envs
    printf "\n>> Configuring [${UARRAY[${UNUM}]}]'s -base- env\n"
-   conda env create -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/base-env.yml
+   conda env create -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/utils/base-env.yml
    printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -viz- tools\n"
-   conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/viz-env.yml
+   conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/utils/viz-env.yml
    printf "\n>> Updating [${UARRAY[${UNUM}]}]'s env with -modeling- tools\n"
-   conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/modeling-env.yml
+   conda env update -p /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints -f /home/projects/teacherprints/utils/modeling-env.yml
    # sudo chown ${UARRAY[${UNUM}]}:${UARRAY[${UNUM}]} /home/${UARRAY[${UNUM}]}/.conda
    sudo chown -R ${UARRAY[${UNUM}]}:sudo /home/${UARRAY[${UNUM}]}/.conda
    conda config --append envs_dirs /home/${UARRAY[${UNUM}]}/.conda/envs/teacherprints

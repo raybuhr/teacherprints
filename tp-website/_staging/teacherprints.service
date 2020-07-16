@@ -6,7 +6,7 @@ After=network.target
 User=ubuntu
 Group=www-data
 WorkingDirectory=/home/project/teacherprints/webapp
-Environment='/home/tpwebsite/.conda/envs/pyannote/bin'
+Environment='/home/tpwebsite/.conda/envs/run_website    /bin'
 ExecStart=/home/tpwebsite/.conda/envs/pyannote/bin/gunicorn --workers 4 --bind unix:teacherprints.sock -m 007 wsgi:app
 
 [Install]
@@ -22,3 +22,8 @@ WantedBy=multi-user.target
 
 # This follows the instructions here:
 # https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
+# Issues resolved via:
+# https://github.com/systemd/systemd/issues/6019
+# https://stackoverflow.com/questions/43809618/running-gunicorn-on-ubuntu-in-a-conda-environment
+# https://www.ridgesolutions.ie/index.php/2019/08/13/launching-flask-on-port-80-without-using-sudo/
+# https://gist.github.com/SRatna/f09dd67a1d3bcf7c886b5f7aa21976e0
