@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .slidecontainer {
+          width: 100%; /* Width of the outside container */
+        }
+
+        /* The slider itself */
+        .slider {
+        /*   -webkit-appearance: none;  /* Override default CSS styles */ */
+        /*   appearance: none; */
+        /*   width: 100%; /* Full-width */ */
+        /*   height: 25px; /* Specified height */ */
+        /*   background: #d3d3d3; /* Grey background */ */
+        /*   outline: none; /* Remove outline */ */
+        /*   opacity: 0.7; Set transparency (for mouse-over effects on hover) */
+        /*   -webkit-transition: .2s; /* 0.2 seconds transition on hover */ */
+        /*   transition: opacity .2s; */
+        }
+
+        /* Mouse-over effects */
+        .slider:hover {
+          opacity: 1; /* Fully shown on mouse-over */
+        }
+
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none; /* Override default look */
+          appearance: none;
+          width: 25px; /* Set a specific slider handle width */
+          height: 25px; /* Slider handle height */
+        /*   background: #4CAF50; /* Green background */ */
+          background: url('https://lh3.google.com/u/0/d/15wHXTdIv3BcEg9sp2I5db3BZpGqC45Nk=w640-h400-k-iv2'); /* This part was trying to pull in the TeacherPrint logo, but I couldn't get it to work*/
+          cursor: pointer; /* Cursor on hover */
+        }
+
+        .slider::-moz-range-thumb {
+          width: 25px; /* Set a specific slider handle width */
+          height: 25px; /* Slider handle height */
+          background: #4CAF50; /* Green background */
+          cursor: pointer; /* Cursor on hover */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let sliders = document.getElementsByClassName('slider');
+        for(let i = 0; i < sliders.length; i++) {
+            sliders.item(i).addEventListener('input',function() {
+                let txtValue=this.getAttribute('id') + 'Text' ;
+                document.getElementById(txtValue).innerHTML=this.value;
+                console.log(txtValue, this.value);
+            });
+        }
+    </script>
+<!--     <p>How much time did you want to spend talking?</p>
+    <input class='slider' id="sliderPlan" type="range" min="00" max="100" step="1">
+    <output id="sliderPlanText"></output>
+    <p>How much time do you think you spent talking?</p>
+    <input class='slider' id="sliderGuess" type="range" min="0" max="100" step="1">
+    <output id="sliderGuessText"></output> -->
+<form action="{{ url_for('tester') }}" method=post name="testform">
+        <div class='slider-example'>
+                <h4>Expected Talk Time</h4>
+            <div class="well">
+                <p id="basicExample">
+                    <!-- Date/time range form; requires js library at bottom -->
+                    <input type="test" placeholder="Start Date" class="date start" name="startdate" value="{{ request.form.startdate }}">
+                    <input type="test" placeholder="Start Time" class="time start" name="starttime" value="{{ request.form.starttime }}"> to
+                    <input type="test" placeholder="End Date" class="date end" name="enddate" value="{{ request.form.enddate }}">
+                    <input type="test" placeholder="End Time" class="time end" name="endtime" value="{{ request.form.endtime }}">
+                </p>
+            </div>
+                <hr>
+
+                <h4>HDOP Range</h4>
+
+            <div class="well">
+
+                <input id="ex16b" type="text" data-slider-min="{{hdopmin}}" data-slider-max="{{hdopmax}}" data-slider-step=".01" 
+                data-slider-ticks="[{{hdopmin}}, {{hdopmax}}]" data-slider-ticks-snap-bounds="1" data-slider-ticks-labels="['{{hdopmin}}', '{{hdopmax}}']" />
+
+            </div>
+
+                {{ form.submit }}
+
+
+        </form>
+
+
+</body>
+</html>
+
+<!-- https://codepen.io/impressivewebs/pen/exejPb?editors=1010 -->
+<!-- https://stackoverflow.com/questions/61172282/html-vanilla-js-multiple-oninput-handlers-for-the-same-input-fields -->
