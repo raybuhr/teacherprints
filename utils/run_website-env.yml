@@ -3,75 +3,92 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - _libgcc_mutex=0.1
-  - alembic=1.4.2
-  - ca-certificates=2020.6.20
-  - certifi=2020.6.20
-  - click=7.1.2
-  - email_validator=1.1.1
-  - expat=2.2.9
-  - flask=1.1.2
-  - flask_bootstrap>=3.3.7
-  - flask-login=0.5.0
-  - flask-mail=0.9.1
-  - flask-migrate=2.4.0
-  - flask-sqlalchemy=2.4.3
-  - flask-wtf=0.14.3
-  - fontconfig=2.13.0
-  - freetype=2.10.2
-  - giflib=5.1.4
-  - gunicorn=20.0.4
-  - icu=58.2
-  - itsdangerous=1.1.0
-  - jinja2=2.11.2
-  - jpeg=9b
-  - libedit=3.1.20191231
-  - libffi=3.3
-  - libgd=2.2.5
-  - libpng=1.6.37
-  - libtiff=4.1.0
-  - libuuid=1.0.3
-  - libwebp=1.0.1
-  - libxml2=2.9.10
-  - libxslt=1.1.34
-  - lz4-c=1.9.2
-  - mako=1.1.0
-  - markupsafe=1.1.1
-  - ncurses=6.2
-  - nginx=1.15.5
-  - openssl=1.1.1g
-  - pcre=8.44
-  - pip=20.1.1
-  - pyjwt>=1.7.1
-  - python=3.8.3
-  - python-dateutil=2.8.1
-  - python-editor=1.0.4
-  - python_abi=3.8
-  - readline=8.0
-  - setuptools=47.3.1
-  - six=1.15.0
-  - sqlalchemy=1.3.18
-  - sqlite=3.32.3
-  - tk=8.6.10
-  - werkzeug=1.0.1
-  - wheel=0.34.2
-  - wtforms=2.3.1
-  - xz=5.2.5
-  - zlib=1.2.11
-  - zstd=1.4.4
-  - python-dotenv-0.14.0
-# Uncomment the following lines on Ubuntu...
-# but leave them commented out on Mac. These libraries
-# don't exist on Mac
-  # - libgcc-ng=9.1.0
-  # - libgfortran-ng=7.3.0
-  # - libstdcxx-ng=9.1.0
-  # - ld_impl_linux-64=2.33.1
-# Leave uncommented when creating in the first place on
-# server. Local install may have different path and so
-# the prefix would not work
-# prefix: /home/tpwebsite/.conda/envs/run_website
+  - _libgcc_mutex=0.1=main
+  - alembic=1.4.2=pyh9f0ad1d_0
+  - babel=2.8.0=py_0
+  - blinker=1.4=py_1
+  - brotlipy=0.7.0=py38haf1e3a3_1000
+  - ca-certificates=2020.6.24=0
+  - certifi=2020.6.20=py38_0
+  - cffi=1.14.0=py38hc512035_1
+  - chardet=3.0.4=py38_1003
+  - click=7.1.2=pyh9f0ad1d_0
+  - cryptography=2.9.2=py38ha12b0ac_0
+  - dnspython=1.16.0=py_1
+  - dominate=2.4.0=py_0
+  - ecdsa=0.13=py_0
+  - elasticsearch=7.0.4=py_0
+  - email_validator=1.1.1=pyh9f0ad1d_0
+  - expat=2.2.9=h4a8c4bd_2
+  - flask=1.1.2=pyh9f0ad1d_0
+  - flask-babel=1.0.0=py_0
+  - flask-bootstrap=3.3.7.1=py_0
+  - flask-login=0.5.0=py_0
+  - flask-mail=0.9.1=py_2
+  - flask-migrate=2.4.0=py38_0
+  - flask-moment=0.7.0=py_0
+  - flask-sqlalchemy=2.4.3=py_0
+  - flask-wtf=0.14.3=py_0
+  - fontconfig=2.13.0=h5d5b041_1
+  - freetype=2.10.2=h8da9a1a_0
+  - gettext=0.19.8.1=h1f1d5ed_1
+  - giflib=5.1.4=h1de35cc_1001
+  - gmp=6.2.0=h4a8c4bd_2
+  - gunicorn=20.0.4=py38h32f6830_1
+  - icu=58.2=h0a44026_1000
+  - idna=2.10=pyh9f0ad1d_0
+  - itsdangerous=1.1.0=py_0
+  - jinja2=2.11.2=pyh9f0ad1d_0
+  - jpeg=9b=he5867d9_2
+  - libcxx=10.0.0=h1af66ff_2
+  - libedit=3.1.20191231=h1de35cc_1
+  - libffi=3.3=hb1e8313_2
+  - libgd=2.2.5=h9bbc9bf_3
+  - libgfortran=3.0.1=0
+  - libiconv=1.16=h1de35cc_0
+  - libpng=1.6.37=hbbe82c9_1
+  - libtiff=4.1.0=hcb84e12_1
+  - libuuid=1.0.3=h6bb4b03_2
+  - libwebp=1.0.1=hd73b212_0
+  - libxml2=2.9.10=h3b9e6c8_1
+  - libxslt=1.1.34=h83b36ba_0
+  - lz4-c=1.9.2=h4a8c4bd_1
+  - mako=1.1.0=py_0
+  - markupsafe=1.1.1=py38h64e0658_1
+  - ncurses=6.2=h0a44026_1
+  - nginx=1.15.5=haf7b11b_0
+  - openssl=1.1.1g=h1de35cc_0
+  - pcre=8.44=h4a8c4bd_0
+  - pip=20.1.1=py_1
+  - pycparser=2.20=py_2
+  - pycryptodome=3.9.7=py38h646a047_1
+  - pyjwt=1.7.1=py38_0
+  - pyopenssl=19.1.0=py_1
+  - pysocks=1.7.1=py38_1
+  - python=3.8.3=h26836e1_2
+  - python-dateutil=2.8.1=py_0
+  - python-dotenv=0.14.0=pyh9f0ad1d_0
+  - python-editor=1.0.4=py_0
+  - python_abi=3.8=1_cp38
+  - pytz=2020.1=pyh9f0ad1d_0
+  - readline=8.0=h1de35cc_0
+  - requests=2.24.0=py_0
+  - setuptools=47.3.1=py38h32f6830_0
+  - six=1.15.0=pyh9f0ad1d_0
+  - sqlalchemy=1.3.18=py38h64e0658_0
+  - sqlite=3.32.3=hffcf06c_0
+  - tk=8.6.10=hbbe82c9_0
+  - urllib3=1.25.9=py_0
+  - visitor=0.1.3=pyh9f0ad1d_1
+  - werkzeug=1.0.1=pyh9f0ad1d_0
+  - wheel=0.34.2=py_1
+  - wtforms=2.3.1=py_0
+  - xz=5.2.5=h0b31af3_1
+  - zlib=1.2.11=h0b31af3_1006
+  - zstd=1.4.4=h4b3e974_3
+  - pip:
+    - dennis==0.9
+    - guess-language-spirit==0.5.3
+    - polib==1.1.0
+prefix: /Users/tsslade/miniconda3/envs/run_website
 
-
-# References:
-# https://stackoverflow.com/questions/48439159/failed-to-create-anaconda-environment-resolvepackagenotfound
