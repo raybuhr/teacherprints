@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var width = 600;
+var width = 650;
 height = 550;
 margin = 100;
 
@@ -8,7 +8,7 @@ var radius = Math.min(width, height) / 2 - margin;
 
 // append the svg object to the div called 'my_dataviz'
 var svg = d3
-  .select("#my_dataviz")
+  .select("#speakerwheel")
   .append("svg")
   .attr("width", width)
   .attr("height", height)
@@ -16,7 +16,7 @@ var svg = d3
   .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 // Create dummy data
-var data = { TEACHER: 71, OVERLAPS: 3, STUDENT: 7, PAUSES: 19 };
+var data = {'TEACHER': 77, 'OVERLAPS': 5, 'STUDENT': 3, 'PAUSES': 15};
 
 // set the color scale
 var color = d3
@@ -31,6 +31,7 @@ var pie = d3
   .value(function (d) {
     return d.value;
   });
+
 var data_ready = pie(d3.entries(data));
 
 // The arc generator
@@ -63,6 +64,16 @@ svg
   .data(data_ready)
   .enter()
   .append("path")
+  .transition()
+  .delay(function(d,i) {
+    return i * 500; }).duration(500)
+    .attrTween('d', function(d) {
+      var i = d3.interpolate(d.startAngle+0.1, d.endAngle);
+      return function(t) {
+        d.endAngle = i(t); 
+        return arc(d)
+        }
+      })
   .attr("d", arc)
   .attr("fill", function (d) {
     return color(d.data.key);
@@ -76,6 +87,16 @@ svg
   .data(data_ready)
   .enter()
   .append("path")
+  .transition()
+  .delay(function(d,i) {
+    return i * 1000; }).duration(1000)
+    .attrTween('d', function(d) {
+      var i = d3.interpolate(d.startAngle+0.1, d.endAngle);
+      return function(t) {
+        d.endAngle = i(t); 
+        return arc(d)
+        }
+      })
   .attr("d", arcT)
   .attr("fill", function (d) {
     if (d.data.key == "TEACHER") {
@@ -86,8 +107,6 @@ svg
       return "#FFFFFF";
     }
   })
-  .attr("stroke", "black")
-  .style("stroke-width", "0px")
   .style("opacity", 1);
 
 svg
@@ -95,6 +114,16 @@ svg
   .data(data_ready)
   .enter()
   .append("path")
+  .transition()
+  .delay(function(d,i) {
+    return i * 1000; }).duration(1000)
+    .attrTween('d', function(d) {
+      var i = d3.interpolate(d.startAngle+0.1, d.endAngle);
+      return function(t) {
+        d.endAngle = i(t); 
+        return arc(d)
+        }
+      })
   .attr("d", arcS)
   .attr("fill", function (d) {
     if (d.data.key == "STUDENT") {
@@ -105,8 +134,6 @@ svg
       return "#FFFFFF";
     }
   })
-  .attr("stroke", "black")
-  .style("stroke-width", "0px")
   .style("opacity", 1);
 
 // Add the polylines between chart and labels:
@@ -115,6 +142,8 @@ svg
   .data(data_ready)
   .enter()
   .append("polyline")
+  .transition()
+  .delay(1500)
   .attr("stroke", "black")
   .style("fill", "none")
   .attr("stroke-width", 1)
@@ -133,6 +162,8 @@ svg
   .data(data_ready)
   .enter()
   .append("text")
+  .transition()
+  .delay(1500)
   .text(function (d) {
     console.log(d.data.key);
     return d.data.key + " " + d.data.value + "%";
