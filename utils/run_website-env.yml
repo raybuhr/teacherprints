@@ -11,7 +11,9 @@ dependencies:
   - email_validator=1.1.1
   - expat=2.2.9
   - flask=1.1.2
+  - flask_bootstrap>=3.3.7
   - flask-login=0.5.0
+  - flask-mail=0.9.1
   - flask-migrate=2.4.0
   - flask-sqlalchemy=2.4.3
   - flask-wtf=0.14.3
@@ -40,6 +42,7 @@ dependencies:
   - openssl=1.1.1g
   - pcre=8.44
   - pip=20.1.1
+  - pyjwt>=1.7.1
   - python=3.8.3
   - python-dateutil=2.8.1
   - python-editor=1.0.4
