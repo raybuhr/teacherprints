@@ -2,7 +2,7 @@ from flask import flash, redirect, render_template, request, url_for
 from flask_babel import _, get_locale
 from flask_babel import lazy_gettext as _l
 from flask_login import current_user, login_user, logout_user
-from guess_language import guess_language
+#from guess_language import guess_language
 from tp_app import db
 from tp_app.auth import bp
 from tp_app.auth.email import send_password_reset_email

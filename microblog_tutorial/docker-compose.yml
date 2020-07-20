@@ -1,0 +1,13 @@
+version: '3'
+services:
+    web:
+        build: .
+        image: tp-app
+        environment:
+            - FLASK_APP=tp-website.py
+        ports:
+            - "8080:80"
+            - "8000:5000"
+            - "3306:3306"
+        volumes:
+            - .:/app
