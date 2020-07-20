@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Title -->
-  <title>TeacherPrints | Dashboard</title>
+  <title>TeacherPrints | Overlaps</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -12,8 +12,7 @@
   <link rel="shortcut icon" href="../../favicon.ico">
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Karla:wght@400;700&display=swap" rel="stylesheet">
-
+   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Karla:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/all.min.css">
@@ -22,9 +21,10 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
+
 </head>
 <body>
-  <!-- ========== HEADER ========== -->
+   <!-- ========== HEADER ========== -->
   <header id="header" class="header header-box-shadow-on-scroll header-abs-top header-bg-transparent header-show-hide"
           data-hs-header-options='{
             "fixMoment": 1000,
@@ -49,7 +49,7 @@
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-lg">
           <!-- Logo -->
-          <a class="navbar-brand" href="../landings/index.html" aria-label="Front">
+          <a class="navbar-brand" href="../pages/tp_teacherprint_sum.html" aria-label="Front">
             <img src="../../assets/img/teacherprints/logo.png" alt="Logo">
           </a>
           <!-- End Logo -->
@@ -74,7 +74,7 @@
           </button>
           <!-- End Responsive Toggle Button -->
 
-          <!-- Navigation -->
+<!-- Navigation -->
           <div id="navBar" class="collapse navbar-collapse">
             <div class="navbar-body header-abs-top-inner">
               <ul class="navbar-nav">
@@ -159,47 +159,345 @@
   </header>
   <!-- ========== END HEADER ========== -->
 
-    <!-- ========== MAIN ========== -->
+  <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
-    <!-- Hero Section -->
-    <div class="container space-top-3 space-top-lg-4 space-bottom-2">
-      <div class="w-lg-80 text-center mx-lg-auto">
-        <div class="mb-5 mb-md-11">
-          <h1 class="mb-4">About the TeacherPrints Project</h1>
-          <p class="lead">TeacherPrints is lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo velit pulvinar, mollis mi sit amet, tempor magna. Nunc nisl purus, sollicitudin ut elit ac, ultrices tincidunt augue. </p>
+    <div class="container space-top-2 space-top-lg-3 space-bottom-2">
+    <!-- Profile Section -->
+    <div class="container space-top-3 space-top-sm-2 space-bottom-2">
+      <div class="row">
+        <div id="stickyBlockStartPoint" class="col-md-5 col-lg-4 mb-7 mb-md-0">
+          <div class="js-sticky-block card border p-4"
+               data-hs-sticky-block-options='{
+                 "parentSelector": "#stickyBlockStartPoint",
+                 "breakpoint": "md",
+                 "startPoint": "#stickyBlockStartPoint",
+                 "endPoint": "#stickyBlockEndPoint",
+                 "stickyOffsetTop": 12,
+                 "stickyOffsetBottom": 12
+               }'>
+            <div class="text-center">
+              <!-- User Content -->
+              <img class="img-fluid rounded-circle mx-auto mb-3" src="../../assets/img/teacherprints/tp_ideo_overlaps.png" alt="Image Description" width="80" height="80">
+              <h1 class="h2 text-primary text-cap">Overlaps</h1>
+              <!-- End User Content -->
+            </div>
+
+            <div class="border-top pt-4 mt-4">
+              <div class="media text-body font-weight-bold font-size-1">
+                <div class="media-body">
+                  <p>An Overlap is where a new Statement begins before the previous Statement ends.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-top pt-4 mt-4">
+              <h1 class="h4 mb-3 text-cap">Lesson Summary</h1>
+
+              <div class="row">
+                <div class="col-6 col-md-12 col-lg-6 mb-3">
+                  <!-- Social Profiles -->
+                  <a class="media" href="#">
+                    <div class="media-body">
+                      <span class="d-block font-size-1 font-weight-bold">Total Time</span>
+                      <small class="d-block text-body"># min # sec</small>
+                    </div>
+                  </a>
+                  <!-- End Social Profiles -->
+                </div>
+
+                <div class="col-6 col-md-12 col-lg-6 mb-4">
+                  <!-- Social Profiles -->
+                  <a class="media" href="#">
+                    <div class="media-body">
+                      <span class="d-block font-size-1 font-weight-bold">Total Statements</span>
+                      <small class="d-block text-body"># Statements</small>
+                    </div>
+                  </a>
+                  <!-- End Social Profiles -->
+                </div>
+
+                <div class="col-6 col-md-12 col-lg-6 mb-0 mb-md-4 mb-lg-0">
+                  <!-- Social Profiles -->
+                  <a class="media" href="#">
+                    <div class="media-body">
+                      <span class="d-block font-size-1 font-weight-bold">Total Talk Time</span>
+                      <small class="d-block text-body"># min # sec</small>
+                    </div>
+                  </a>
+                  <!-- End Social Profiles -->
+                </div>
+
+                <div class="col-6 col-md-12 col-lg-6">
+                  <!-- Social Profiles -->
+                  <a class="media" href="#">
+                    <div class="media-body">
+                      <span class="d-block font-size-1 font-weight-bold">Total Pause Time</span>
+                      <small class="d-block text-body"># min # sec</small>
+                    </div>
+                  </a>
+                  <!-- End Social Profiles -->
+          
+                </div>
+              </div>
+            </div>
+
+            <div class="border-top text-center pt-4 mt-4">
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualization -->
+        <div class="col-md-7 col-lg-8">
+          <div class="ml-lg-6">
+            <div class="mb-5 mb-sm-0 mr-0">
+              <div id="overlaps" class="container">
+              </div>
+            </div>
+
+            <div class="d-block h3 text-primary mb-0">
+              <div class="media-body">
+                <p>The average Overlap was about #.# seconds. In this lesson, XX% of Speaker Statements Overlapped.</p>
+              </div>
+            </div>
+
+            <div class="border-top pt-5 mt-5">
+
+            <p>You predicted that Teacher Talk would make up ~##% of the lesson, and Student Talk would make up ~##%.  How does this compare to what you see in the Speaker Wheel?</p>
+
+            <!-- Read More - Collapse -->
+            <div class="collapse" id="collapseDescriptionSection1">
+              <p>If the values are close, this indicates a match between your plan and your practice. You have a good sense of how much you and your students will talk during this type of lesson!</p>
+            </div>
+            <!-- End Read More - Collapse -->
+
+            <!-- Link -->
+            <a class="link link-collapse small font-size-1 font-weight-bold mb-3" data-toggle="collapse" href="#collapseDescriptionSection1" role="button" aria-expanded="false" aria-controls="collapseDescriptionSection1">
+              <span class="link-collapse-default">Close</span>
+              <span class="link-collapse-active"> </span>
+              <span class="link-icon ml-1">+</span>
+            </a>
+            <!-- End Link -->
+
+            <!-- Read More - Collapse -->
+            <div class="collapse" id="collapseDescriptionSection2">
+              <p>If the values are rather different, this indicates a mismatch between your plan and your practice. Consider reviewing the distribution of Teacher and Student Talk for similar lessons, to see if this pattern is typical for you.</p>
+                <!-- Read More - Collapse -->
+                <div class="collapse" id="collapseDescriptionSection2a">
+                  <p>If this pattern is typical for you, consider what changes you could make to help your actions be more in line with your expectations. It may be useful to review the lesson statement-by-statement Audiozation to see how the classroom conversation played out.</p>
+                </div>
+                <!-- End Read More - Collapse -->
+
+                <!-- Link -->
+                <a class="link link-collapse small font-size-1 font-weight-bold mb-3" data-toggle="collapse" href="#collapseDescriptionSection2a" role="button" aria-expanded="false" aria-controls="collapseDescriptionSection2a">
+                  <span class="link-collapse-default">Typical</span>
+                  <span class="link-collapse-active"> </span>
+                  <span class="link-icon ml-1">+</span>
+                </a>
+                <!-- End Link -->
+
+                <!-- Read More - Collapse -->
+                <div class="collapse" id="collapseDescriptionSection2b">
+                  <p>If this pattern is not typical for you, consider what factors in or out of today’s class may have led to the talk distribution shown above.  Are these things you might need to manage more consciously in the future?</p>
+                </div>
+                <!-- End Read More - Collapse -->
+
+                <!-- Link -->
+                <a class="link link-collapse small font-size-1 font-weight-bold mb-3" data-toggle="collapse" href="#collapseDescriptionSection2b" role="button" aria-expanded="false" aria-controls="collapseDescriptionSection2b">
+                  <span class="link-collapse-default">Not Typical</span>
+                  <span class="link-collapse-active"> </span>
+                  <span class="link-icon ml-1">+</span>
+                </a>
+                <!-- End Link -->
+            </div>
+            <!-- End Read More - Collapse -->
+
+            <!-- Link -->
+            <a class="link link-collapse small font-size-1 font-weight-bold mb-3" data-toggle="collapse" href="#collapseDescriptionSection2" role="button" aria-expanded="false" aria-controls="collapseDescriptionSection2">
+              <span class="link-collapse-default">Not Close</span>
+              <span class="link-collapse-active"> </span>
+              <span class="link-icon ml-1">+</span>
+            </a>
+            <!-- End Link -->
+
+            <p>Pauses typically indicate that a speaker is waiting for a response or thinking about how they want to respond. Given the type of lesson, would you expect many pauses between speakers? What about long pauses or periods of silence?  For a more detailed look at how pauses were distributed throughout your lesson, see the statement-by-statement Audiozation.</p>
+
+            <p>Overlaps occur when the teacher and students are talking at the same time.  Given the type of lesson, would you expect there to be multiple voices active at the same time?</p>
+
+            <!-- Read More - Collapse -->
+            <div class="collapse" id="collapseDescriptionSection3">
+              <p>If so, you can review the statement-by-statement Audiozation to see if there are overlaps that took place outside of small group activities, games, or discussions where people sometimes talk simultaneously.</p>
+            </div>
+            <!-- End Read More - Collapse -->
+
+            <!-- Link -->
+            <a class="link link-collapse small font-size-1 font-weight-bold mb-3" data-toggle="collapse" href="#collapseDescriptionSection3" role="button" aria-expanded="false" aria-controls="collapseDescriptionSection3">
+              <span class="link-collapse-default">Yes</span>
+              <span class="link-collapse-active"> </span>
+              <span class="link-icon ml-1">+</span>
+            </a>
+            <!-- End Link -->
+
+            <!-- Read More - Collapse -->
+            <div class="collapse" id="collapseDescriptionSection4">
+              <p>If not, overlaps may indicate that people are interrupting each other, rather than listening actively to others’ ideas.  If there are a lot of these kinds of overlaps, this may be a useful area to focus on for improvement.</p>
+            </div>
+            <!-- End Read More - Collapse -->
+
+            <!-- Link -->
+            <a class="link link-collapse small font-size-1 font-weight-bold mb-3" data-toggle="collapse" href="#collapseDescriptionSection4" role="button" aria-expanded="false" aria-controls="collapseDescriptionSection4">
+              <span class="link-collapse-default">No</span>
+              <span class="link-collapse-active"> </span>
+              <span class="link-icon ml-1">+</span>
+            </a>
+            <!-- End Link -->
+
+            </div>
+
+            
+
+            <!-- Sticky Block End Point -->
+            <div id="stickyBlockEndPoint"></div>
+          </div>
         </div>
       </div>
-
-      <!-- Gallery Section -->
-      <div class="row mx-n2">
-        <div class="col-6 col-md px-2 mb-3">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img17.jpg);"></div>
-        </div>
-        <div class="col-md-3 d-none d-md-block px-2 mb-3">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img6.jpg);"></div>
-        </div>
-        <div class="col-6 col-md px-2 mb-3">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img14.jpg);"></div>
-        </div>
-
-        <div class="w-100"></div>
-
-        <div class="col-6 col-md px-2 mb-3 mb-md-0">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img25.jpg);"></div>
-        </div>
-        <div class="col-md-4 d-none d-md-block px-2 mb-3 mb-md-0">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img16.jpg);"></div>
-        </div>
-        <div class="col-6 col-md px-2">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img12.jpg);"></div>
-        </div>
-      </div>
-      <!-- End Gallery Section -->
     </div>
-    <!-- End Hero Section -->
+    <!-- End Profile Section -->
+    </div>
+
+    <!-- Ribbon Menu -->
+    <div class="container space-top-1 space-top-lg-1 space-bottom-2 space-bottom-lg-3">
+      <div class="cbp"
+           data-hs-cbp-options='{
+             "animationType": "fadeOut",
+             "caption": "zoom",
+             "gapHorizontal": 40,
+             "gapVertical": 40,
+             "mediaQueries": [
+               {"width": 1500, "cols": 6},
+               {"width": 1100, "cols": 6},
+               {"width": 800, "cols": 6},
+               {"width": 480, "cols": 3},
+               {"width": 380, "cols": 3}
+             ]
+           }'>
+        <!-- Item -->
+        <div class="cbp-item product">
+          <a class="cbp-caption" href="../pages/tp_teacherprint_sum.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_dash.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Dashboard</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item branding">
+          <a class="cbp-caption" href="../pages/tp_speakerwheel.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_wheel.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Speaker Wheel</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item branding">
+          <a class="cbp-caption" href="../pages/tp_statements.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_statements2.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Statements</span>
+            </div>
+          </a>
+        </div>
+        <-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item product branding">
+          <a class="cbp-caption" href="../pages/tp_talktime.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_talktime.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Talk Time</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item
+        <div class="cbp-item product illustration">
+          <a class="cbp-caption" href="../pages/tp_overlaps.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_overlaps.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Overlaps</span>
+            </div>
+          </a>
+        </div>
+         End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item design illustration">
+          <a class="cbp-caption" href="../pages/tp_pauses.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_pauses.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Pauses</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item product branding">
+          <a class="cbp-caption" href="../pages/tp_audiozation.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_audio.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Audiozation</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+      </div>
+    </div>      
+    <!-- End Ribbon Menu -->
 
   </main>
-  <!-- ========== END MAIN ========== -->
+  <!-- ========== END MAIN CONTENT ========== -->
 
   <!-- ========== FOOTER ========== -->
   <footer class="bg-primary">
@@ -372,240 +670,6 @@
   </footer>
   <!-- ========== END FOOTER ========== -->
 
-  <!-- ========== SECONDARY CONTENTS ========== -->
-  <!-- Account Sidebar Navigation -->
-  <aside id="sidebarContent" class="hs-unfold-content sidebar">
-    <div class="sidebar-scroller">
-      <div class="sidebar-container">
-        <div class="sidebar-footer-offset" style="padding-bottom: 7rem;">
-          <!-- Toggle Button -->
-          <div class="d-flex justify-content-end align-items-center pt-4 px-4">
-            <div class="hs-unfold">
-              <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-soft-secondary" href="javascript:;"
-                 data-hs-unfold-options='{
-                  "target": "#sidebarContent",
-                  "type": "css-animation",
-                  "animationIn": "fadeInRight",
-                  "animationOut": "fadeOutRight",
-                  "hasOverlay": "rgba(55, 125, 255, 0.1)",
-                  "smartPositionOff": true
-                 }'>
-                <svg width="10" height="10" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
-                </svg>
-               </a>
-            </div>
-          </div>
-          <!-- End Toggle Button -->
-
-          <!-- Content -->
-          <div class="scrollbar sidebar-body">
-            <div class="sidebar-content py-4 px-7">
-              <form class="js-validate">
-                <!-- Login -->
-                <div id="login">
-                  <!-- Title -->
-                  <div class="text-center mb-7">
-                    <h3 class="mb-0">Sign In to Front</h3>
-                    <p>Login to manage your account.</p>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- Input Group -->
-                  <div class="js-form-message mb-4">
-                    <label class="input-label">Email</label>
-                    <div class="input-group input-group-sm mb-2">
-                      <input type="email" class="form-control" name="email" id="signinEmail" placeholder="Email" aria-label="Email" required
-                             data-msg="Please enter a valid email address.">
-                    </div>
-                  </div>
-                  <!-- End Input Group -->
-
-                  <!-- Input Group -->
-                  <div class="js-form-message mb-3">
-                    <label class="input-label">Password</label>
-                    <div class="input-group input-group-sm mb-2">
-                      <input type="password" class="form-control" name="password" id="signinPassword" placeholder="Password" aria-label="Password" required
-                             data-msg="Your password is invalid. Please try again.">
-                    </div>
-                  </div>
-                  <!-- End Input Group -->
-
-                  <div class="d-flex justify-content-end mb-4">
-                    <a class="js-animation-link small link-underline" href="javascript:;"
-                       data-hs-show-animation-options='{
-                         "targetSelector": "#forgotPassword",
-                         "groupName": "idForm",
-                         "animationType": "css-animation",
-                         "animationIn": "slideInUp",
-                         "duration": 400
-                       }'>Forgot Password?</a>
-                  </div>
-
-                  <div class="mb-3">
-                    <button type="submit" class="btn btn-sm btn-primary btn-block">Sign In</button>
-                  </div>
-
-                  <div class="text-center mb-3">
-                    <span class="divider divider-xs divider-text">OR</span>
-                  </div>
-
-                  <a class="btn btn-sm btn-ghost-secondary btn-block mb-2" href="#">
-                    <span class="d-flex justify-content-center align-items-center">
-                      <img class="mr-2" src="../../assets/img/160x160/img17.png" alt="Image Description" width="14" height="14">
-                      Sign In with Google
-                    </span>
-                  </a>
-
-                  <div class="text-center">
-                    <span class="small text-muted">Do not have an account?</span>
-                    <a class="js-animation-link small font-weight-bold" href="javascript:;"
-                       data-hs-show-animation-options='{
-                         "targetSelector": "#signup",
-                         "groupName": "idForm",
-                         "animationType": "css-animation",
-                         "animationIn": "slideInUp",
-                         "duration": 400
-                       }'>Sign Up
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Signup -->
-                <div id="signup" style="display: none; opacity: 0;">
-                  <!-- Title -->
-                  <div class="text-center mb-7">
-                    <h3 class="mb-0">Create your account</h3>
-                    <p>Fill out the form to get started.</p>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- Input Group -->
-                  <div class="js-form-message mb-4">
-                    <label class="input-label">Email</label>
-                    <div class="input-group input-group-sm mb-2">
-                      <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Email" aria-label="Email" required
-                             data-msg="Please enter a valid email address.">
-                    </div>
-                  </div>
-                  <!-- End Input Group -->
-
-                  <!-- Input Group -->
-                  <div class="js-form-message mb-4">
-                    <label class="input-label">Password</label>
-                    <div class="input-group input-group-sm mb-2">
-                      <input type="password" class="form-control" name="password" id="signupPassword" placeholder="Password" aria-label="Password" required
-                             data-msg="Your password is invalid. Please try again.">
-                    </div>
-                  </div>
-                  <!-- End Input Group -->
-
-                  <!-- Input Group -->
-                  <div class="js-form-message mb-4">
-                    <label class="input-label">Confirm Password</label>
-                    <div class="input-group input-group-sm mb-2">
-                      <input type="password" class="form-control" name="confirmPassword" id="signupConfirmPassword" placeholder="Confirm Password" aria-label="Confirm Password" required
-                             data-msg="Password does not match the confirm password.">
-                    </div>
-                  </div>
-                  <!-- End Input Group -->
-
-                  <div class="mb-3">
-                    <button type="submit" class="btn btn-sm btn-primary btn-block">Sign Up</button>
-                  </div>
-
-                  <div class="text-center mb-3">
-                    <span class="divider divider-xs divider-text">OR</span>
-                  </div>
-
-                  <a class="btn btn-sm btn-ghost-secondary btn-block mb-2" href="#">
-                    <span class="d-flex justify-content-center align-items-center">
-                      <img class="mr-2" src="../../assets/img/160x160/img17.png" alt="Image Description" width="14" height="14">
-                      Sign Up with Google
-                    </span>
-                  </a>
-
-                  <div class="text-center">
-                    <span class="small text-muted">Already have an account?</span>
-                    <a class="js-animation-link small font-weight-bold" href="javascript:;"
-                       data-hs-show-animation-options='{
-                         "targetSelector": "#login",
-                         "groupName": "idForm",
-                         "animationType": "css-animation",
-                         "animationIn": "slideInUp",
-                         "duration": 400
-                       }'>Sign In
-                    </a>
-                  </div>
-                </div>
-                <!-- End Signup -->
-
-                <!-- Forgot Password -->
-                <div id="forgotPassword" style="display: none; opacity: 0;">
-                  <!-- Title -->
-                  <div class="text-center mb-7">
-                    <h3 class="mb-0">Recover password</h3>
-                    <p>Instructions will be sent to you.</p>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- Input Group -->
-                  <div class="js-form-message">
-                    <label class="sr-only" for="recoverEmail">Your email</label>
-                    <div class="input-group input-group-sm mb-2">
-                      <input type="email" class="form-control" name="email" id="recoverEmail" placeholder="Your email" aria-label="Your email" required
-                             data-msg="Please enter a valid email address.">
-                    </div>
-                  </div>
-                  <!-- End Input Group -->
-
-                  <div class="mb-3">
-                    <button type="submit" class="btn btn-sm btn-primary btn-block">Recover Password</button>
-                  </div>
-
-                  <div class="text-center mb-4">
-                    <span class="small text-muted">Remember your password?</span>
-                    <a class="js-animation-link small font-weight-bold" href="javascript:;"
-                       data-hs-show-animation-options='{
-                         "targetSelector": "#login",
-                         "groupName": "idForm",
-                         "animationType": "css-animation",
-                         "animationIn": "slideInUp",
-                         "duration": 400
-                       }'>Login
-                    </a>
-                  </div>
-                </div>
-                <!-- End Forgot Password -->
-              </form>
-            </div>
-          </div>
-          <!-- End Content -->
-        </div>
-
-        <!-- Footer -->
-        <footer class="sidebar-footer border-top py-2 px-7">
-          <ul class="nav nav-sm">
-            <li class="nav-item">
-              <a class="nav-link pl-0" href="#">Privacy</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Terms</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fas fa-info-circle la-lg"></i>
-              </a>
-            </li>
-          </ul>
-        </footer>
-        <!-- End Footer -->
-      </div>
-    </div>
-  </aside>
-  <!-- End Account Sidebar Navigation -->
-  <!-- ========== END SECONDARY CONTENTS ========== -->
-
   <!-- Go to Top -->
   <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;"
      data-hs-go-to-options='{
@@ -636,14 +700,20 @@
   <script src="../../assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
   <script src="../../assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
   <script src="../../assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+  <script src="../../assets/vendor/hs-sticky-block/dist/hs-sticky-block.min.js"></script>
   <script src="../../assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
   <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
   <script src="../../assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+  <script src="../../assets/vendor/typed.js/lib/typed.min.js"></script>
 
   <!-- JS Front -->
   <script src="../../assets/js/hs.core.js"></script>
   <script src="../../assets/js/hs.validation.js"></script>
   <script src="../../assets/js/hs.cubeportfolio.js"></script>
+
+  <!-- Visualization -->
+  <script src="../../assets/js/d3.v4.js"></script>    
+  <script src="../../assets/js/overlaps.js"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -652,14 +722,15 @@
       var header = new HSHeader($('#header')).init();
 
       // initialization of mega menu
-      var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
-        desktop: {
-          position: 'left'
-        }
-      }).init();
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
 
       // initialization of unfold
       var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // initialization of sticky blocks
+      $('.js-sticky-block').each(function () {
+        var stickyBlock = new HSStickyBlock($(this)).init();
+      });
 
       // initialization of show animations
       $('.js-animation-link').each(function () {
@@ -680,11 +751,21 @@
       // initialization of cubeportfolio
       $('.cbp').each(function () {
         var cbp = $.HSCore.components.HSCubeportfolio.init($(this), {
-          layoutMode: 'mosaic',
+          layoutMode: 'grid',
           filters: '#filterControls',
           displayTypeSpeed: 0
         });
       });
+
+      // initialization of text animation (typing)
+      var typed = new Typed(".js-text-animation", {
+        strings: ["create a portfolio", "publicize my band", "sell my products", "promote my business", "display my photographs", "promote my business", "publish my videos"],
+        typeSpeed: 100,
+        loop: true,
+        backSpeed: 50,
+        backDelay: 1500
+      });
+
 
       // initialization of go to
       $('.js-go-to').each(function () {

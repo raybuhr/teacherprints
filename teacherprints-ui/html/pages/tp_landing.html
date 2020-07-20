@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Title -->
-  <title>TeacherPrints | Dashboard</title>
+  <title>TeacherPrints | Landing</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -12,8 +12,7 @@
   <link rel="shortcut icon" href="../../favicon.ico">
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Karla:wght@400;700&display=swap" rel="stylesheet">
-
+   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Karla:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/all.min.css">
@@ -22,6 +21,7 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
+
 </head>
 <body>
   <!-- ========== HEADER ========== -->
@@ -141,13 +141,13 @@
                 </li>
               <!-- End Resources -->
 
-                <!-- Button -->
+                <!-- Button
                 <li class="navbar-nav-last-item">
                   <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
                     Download
                   </a>
                 </li>
-                <!-- End Button -->
+                 End Button -->
               </ul>
             </div>
           </div>
@@ -159,44 +159,199 @@
   </header>
   <!-- ========== END HEADER ========== -->
 
-    <!-- ========== MAIN ========== -->
+  <!-- ========== MAIN ========== -->
   <main id="content" role="main">
-    <!-- Hero Section -->
     <div class="container space-top-3 space-top-lg-4 space-bottom-2">
-      <div class="w-lg-80 text-center mx-lg-auto">
-        <div class="mb-5 mb-md-11">
-          <h1 class="mb-4">About the TeacherPrints Project</h1>
-          <p class="lead">TeacherPrints is lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo velit pulvinar, mollis mi sit amet, tempor magna. Nunc nisl purus, sollicitudin ut elit ac, ultrices tincidunt augue. </p>
-        </div>
+      <!-- Hero -->
+      <div class="w-md-80 w-lg-65 mb-5 mb-md-9">
+        <h1 class="h1 text-primary">TeacherPrint Building Blocks</h1>
+        <p>Hover over each building block below for more information. Click through for a detailed analysis.</p>
       </div>
+      <!-- End Hero -->
 
-      <!-- Gallery Section -->
-      <div class="row mx-n2">
-        <div class="col-6 col-md px-2 mb-3">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img17.jpg);"></div>
-        </div>
-        <div class="col-md-3 d-none d-md-block px-2 mb-3">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img6.jpg);"></div>
-        </div>
-        <div class="col-6 col-md px-2 mb-3">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img14.jpg);"></div>
-        </div>
-
-        <div class="w-100"></div>
-
-        <div class="col-6 col-md px-2 mb-3 mb-md-0">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img25.jpg);"></div>
-        </div>
-        <div class="col-md-4 d-none d-md-block px-2 mb-3 mb-md-0">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img16.jpg);"></div>
-        </div>
-        <div class="col-6 col-md px-2">
-          <div class="h-250rem bg-img-hero" style="background-image: url(../../assets/img/480x320/img12.jpg);"></div>
-        </div>
+      <!-- Filter -->
+      <div id="filterControls" class="text-md-right mb-5 mb-md-7">
+        <a class="cbp-filter-item cbp-filter-item-active btn btn-xs btn-soft-primary btn-pill py-2 px-3 m-1" href="javascript:;" data-filter="*">All</a>
+        <a class="cbp-filter-item btn btn-xs btn-soft-primary btn-pill py-2 px-3 m-1" href="javascript:;" data-filter=".statements">Statements</a>
+        <a class="cbp-filter-item btn btn-xs btn-soft-primary btn-pill py-2 px-3 m-1" href="javascript:;" data-filter=".talktime">Talk Time</a>
+        <a class="cbp-filter-item btn btn-xs btn-soft-primary btn-pill py-2 px-3 m-1" href="javascript:;" data-filter=".pauses">Pauses & Overlaps</a>
       </div>
-      <!-- End Gallery Section -->
+      <!-- End Filter -->
+
+      <div class="cbp"
+           data-hs-cbp-options='{
+             "animationType": "fadeOut",
+             "caption": "zoom",
+             "gapHorizontal": 40,
+             "gapVertical": 40,
+             "mediaQueries": [
+               {"width": 1500, "cols": 6},
+               {"width": 1100, "cols": 6},
+               {"width": 800, "cols": 6},
+               {"width": 480, "cols": 2},
+               {"width": 380, "cols": 1}
+             ]
+           }'>
+        <!-- Item
+        <div class="cbp-item product">
+          <a class="cbp-caption" href="../pages/tp_teacherprint_sum.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_dash.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Dashboard</span>
+            </div>
+          </a>
+        </div>
+         End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item talktime pauses">
+          <a class="cbp-caption" href="../pages/tp_speakerwheel.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_wheel.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="cbp-caption-activeWrap">
+              <div class="d-flex justify-content-start flex-column h-100 p-4">
+                <!--span class="d-block small text-white-70 font-weight-bold text-cap">Product</span-->
+                <span class="d-block h6 text-white mb-0">How are Teacher Talk, Student Talk, Overlaps, and Pauses distributed in the lesson?</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Speaker Wheel</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item statements">
+          <a class="cbp-caption" href="../pages/tp_statements.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_statements2.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="cbp-caption-activeWrap">
+              <div class="d-flex justify-content-start flex-column h-100 p-4">
+                <!--span class="d-block small text-white-70 font-weight-bold text-cap">Product</span-->
+                <span class="d-block h6 text-white mb-0">How many times did the Teacher or Student(s) speak?</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Statements</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item talktime">
+          <a class="cbp-caption" href="../pages/tp_talktime.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_talktime.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="cbp-caption-activeWrap">
+              <div class="d-flex justify-content-start flex-column h-100 p-4">
+                <!--span class="d-block small text-white-70 font-weight-bold text-cap">Product</span-->
+                <span class="d-block h6 text-white mb-0">How long did the Teacher or Student(s) speak overall?</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Talk Time</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item statements">
+          <a class="cbp-caption" href="../pages/tp_audiozation.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_audio.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="cbp-caption-activeWrap">
+              <div class="d-flex justify-content-start flex-column h-100 p-4">
+                <!--span class="d-block small text-white-70 font-weight-bold text-cap">Product</span-->
+                <span class="d-block h6 text-white mb-0">What are the speech patterns of the lesson?</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Audiozation</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item pauses">
+          <a class="cbp-caption" href="../pages/tp_overlaps.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_overlaps.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="cbp-caption-activeWrap">
+              <div class="d-flex justify-content-start flex-column h-100 p-4">
+                <!--span class="d-block small text-white-70 font-weight-bold text-cap">Product</span-->
+                <span class="d-block h6 text-white mb-0">How often did the Teacher and Student(s) speak at the same time?</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Overlaps</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item pauses">
+          <a class="cbp-caption" href="../pages/tp_pauses.html">
+            <div class="overflow-hidden rounded">
+              <div class="cbp-caption-defaultWrap">
+                <img class="rounded" src="../../assets/img/teacherprints/tp_ideo_pauses.png" alt="Image Description">
+              </div>
+            </div>
+            <div class="cbp-caption-activeWrap">
+              <div class="d-flex justify-content-start flex-column h-100 p-4">
+                <!--span class="d-block small text-white-70 font-weight-bold text-cap">Product</span-->
+                <span class="d-block h6 text-white mb-0">When a Speaker stops, how long does the next Speaker wait to begin?</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <span class="d-block small text-body font-weight-bold text-cap">TeacherPrint</span>
+              <span class="d-block h5 mb-0">Pauses</span>
+            </div>
+          </a>
+        </div>
+        <!-- End Item -->
+       
+      </div>
     </div>
-    <!-- End Hero Section -->
+
+    <!-- Button -->
+      <div class="navbar-nav-wrap-content text-center mb-8">
+        <div class="d-none d-lg-block">
+          <a class="btn btn-sm btn-primary transition-3d-hover" href="../pages/tp_teacherprint_sum.html" target="_blank">
+            Build My TeacherPrint Dashboard
+          </a>
+        </div>
+      </div>
+    <!-- End Button -->
 
   </main>
   <!-- ========== END MAIN ========== -->
@@ -244,9 +399,9 @@
           </div>
 
           <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
-            <h5 class="text-white">Company</h5>
+            <h5 class="text-white"> </h5>
 
-            <!-- Nav Link -->
+            <!-- Nav Link
             <ul class="nav nav-sm nav-x-0 nav-white flex-column">
               <li class="nav-item"><a class="nav-link" href="#">About</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
@@ -254,32 +409,30 @@
               <li class="nav-item"><a class="nav-link" href="#">Customers</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Hire us</a></li>
             </ul>
-            <!-- End Nav Link -->
+             End Nav Link -->
           </div>
 
           <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
-            <h5 class="text-white">Features</h5>
+            <h5 class="text-white">Our Project</h5>
 
             <!-- Nav Link -->
             <ul class="nav nav-sm nav-x-0 nav-white flex-column">
-              <li class="nav-item"><a class="nav-link" href="#">Press</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Release notes</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Integrations</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Product Concept</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Data Science</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Value</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contributors</a></li>
             </ul>
             <!-- End Nav Link -->
           </div>
 
           <div class="col-6 col-md-3 col-lg">
-            <h5 class="text-white">Documentation</h5>
+            <h5 class="text-white">How It Works</h5>
 
             <!-- Nav Link -->
             <ul class="nav nav-sm nav-x-0 nav-white flex-column">
-              <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Status</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">API Reference</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Tech Requirements</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Product Demo</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
             </ul>
             <!-- End Nav Link -->
           </div>
@@ -289,22 +442,9 @@
 
             <!-- Nav Link -->
             <ul class="nav nav-sm nav-x-0 nav-white flex-column">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span class="media align-items-center">
-                    <i class="fa fa-info-circle mr-2"></i>
-                    <span class="media-body">Help</span>
-                  </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span class="media align-items-center">
-                    <i class="fa fa-user-circle mr-2"></i>
-                    <span class="media-body">Your Account</span>
-                  </span>
-                </a>
-              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Glossary</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">FAQs</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Research</a></li>
             </ul>
             <!-- End Nav Link -->
           </div>
@@ -316,7 +456,7 @@
       <div class="space-1">
         <div class="row align-items-md-center mb-7">
           <div class="col-md-6 mb-4 mb-md-0">
-            <!-- Nav Link -->
+            <!-- Nav Link
             <ul class="nav nav-sm nav-white nav-x-sm align-items-center">
               <li class="nav-item">
                 <a class="nav-link" href="#">Privacy &amp; Policy</a>
@@ -330,12 +470,12 @@
                 <a class="nav-link" href="#">Site Map</a>
               </li>
             </ul>
-            <!-- End Nav Link -->
+             End Nav Link -->
           </div>
 
           <div class="col-md-6 text-md-right">
             <ul class="list-inline mb-0">
-              <!-- Social Networks -->
+              <!-- Social Networks
               <li class="list-inline-item">
                 <a class="btn btn-xs btn-icon btn-soft-light" href="#">
                   <i class="fab fa-facebook-f"></i>
@@ -356,7 +496,36 @@
                   <i class="fab fa-github"></i>
                 </a>
               </li>
-              <!-- End Social Networks -->
+               End Social Networks -->
+
+              <!-- Language
+              <li class="list-inline-item">
+                <div class="hs-unfold">
+                  <a class="js-hs-unfold-invoker dropdown-toggle btn btn-xs btn-soft-light" href="javascript:;"
+                     data-hs-unfold-options='{
+                      "target": "#footerLanguage",
+                      "type": "css-animation",
+                      "animationIn": "slideInDown"
+                     }'>
+                    <img class="dropdown-item-icon" src="../../assets/vendor/flag-icon-css/flags/4x3/us.svg" alt="United States Flag">
+                    <span>United States</span>
+                  </a>
+
+                  <div id="footerLanguage" class="hs-unfold-content dropdown-menu dropdown-unfold dropdown-menu-bottom mb-2">
+                    <a class="dropdown-item active" href="#">English</a>
+                    <a class="dropdown-item" href="#">Deutsch</a>
+                    <a class="dropdown-item" href="#">Español</a>
+                    <a class="dropdown-item" href="#">Français</a>
+                    <a class="dropdown-item" href="#">Italiano</a>
+                    <a class="dropdown-item" href="#">日本語</a>
+                    <a class="dropdown-item" href="#">한국어</a>
+                    <a class="dropdown-item" href="#">Nederlands</a>
+                    <a class="dropdown-item" href="#">Português</a>
+                    <a class="dropdown-item" href="#">Русский</a>
+                  </div>
+                </div>
+              </li>
+               End Language -->
             </ul>
           </div>
         </div>
@@ -639,6 +808,7 @@
   <script src="../../assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
   <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
   <script src="../../assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+  <script src="../../assets/vendor/typed.js/lib/typed.min.js"></script>
 
   <!-- JS Front -->
   <script src="../../assets/js/hs.core.js"></script>
@@ -680,10 +850,19 @@
       // initialization of cubeportfolio
       $('.cbp').each(function () {
         var cbp = $.HSCore.components.HSCubeportfolio.init($(this), {
-          layoutMode: 'mosaic',
+          layoutMode: 'grid',
           filters: '#filterControls',
           displayTypeSpeed: 0
         });
+      });
+
+      // initialization of text animation (typing)
+      var typed = new Typed(".js-text-animation", {
+        strings: ["create a portfolio", "publicize my band", "sell my products", "promote my business", "display my photographs", "promote my business", "publish my videos"],
+        typeSpeed: 100,
+        loop: true,
+        backSpeed: 50,
+        backDelay: 1500
       });
 
       // initialization of go to
